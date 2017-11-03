@@ -1,0 +1,3 @@
+[submodule "www/envisageanalytics/envisageanalytics/static/dashboardtest"]
+	path = www/envisageanalytics/envisageanalytics/static/dashboardtest
+	url = git@bitbucket.org:Benedikte/dashboardtest.git

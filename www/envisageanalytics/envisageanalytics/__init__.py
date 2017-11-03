@@ -8,6 +8,7 @@ app = Flask(__name__, static_url_path='/var/www/envisageanalytics/envisageanalyt
 def root():
     getParams = request.args
     app.logger.info('Got parameters from GET', getParams)
+    # return app.send_static_file('dashboardtest/ChemistryDashboard.html')
     return app.send_static_file('dashboardtest/WindDashboard.html')
 
 @app.route('/<path:path>')

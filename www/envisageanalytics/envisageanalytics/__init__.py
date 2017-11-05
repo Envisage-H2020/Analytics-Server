@@ -8,8 +8,15 @@ app = Flask(__name__, static_url_path='/var/www/envisageanalytics/envisageanalyt
 def root():
     getParams = request.args
     app.logger.info('Got parameters from GET', getParams)
-    # return app.send_static_file('dashboardtest/ChemistryDashboard.html')
-    return app.send_static_file('dashboardtest/WindDashboard.html')
+    print('Got parameters from GET', getParams)
+    outputAddress = 'dashboardtest/WindDashboard.html'
+    if 'lab' in getParams:
+        labType = getParams['lab']
+        if labType == 'wind':
+            outputAddress = 'dashboardtest/WindDashboard.html'
+        if labType == 'bonding':
+            outputAddress = 'dashboardtest/ChemistryDashboard.html'
+    return app.send_static_file(outputAddress)
 
 @app.route('/<path:path>')
 def static_proxy(path):

@@ -1,0 +1,2795 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"charact",
+				"characterIDs"
+			],
+			[
+				"tech",
+				"techActChars\tstatement"
+			],
+			[
+				"peCh",
+				"peChars\tstatement"
+			],
+			[
+				"act",
+				"actCharacters\tstatement"
+			],
+			[
+				"ac",
+				"activity"
+			],
+			[
+				"chara",
+				"characterIDs"
+			],
+			[
+				"activi",
+				"activities"
+			],
+			[
+				"plotline",
+				"plotLinesObject"
+			],
+			[
+				"plotEle",
+				"plotElementLabel"
+			],
+			[
+				"acti",
+				"activity\tstatement"
+			],
+			[
+				"tods",
+				"todsOK\tstatement"
+			],
+			[
+				"ex",
+				"extraPlotElements"
+			],
+			[
+				"more",
+				"moreThanOnePlaceMoreThanOneActivityInAtLeastOneOfThePlaces\tstatement"
+			],
+			[
+				"moret",
+				"moreThanOneActivitySamePlace\tstatement"
+			],
+			[
+				"extra",
+				"extraPlotElements\tstatement"
+			],
+			[
+				"ploElement",
+				"plotElementLabel"
+			],
+			[
+				"chars",
+				"charsOK\tstatement"
+			],
+			[
+				"com",
+				"combinations"
+			],
+			[
+				"plotElem",
+				"plotElementLabel"
+			],
+			[
+				"plotel",
+				"plotElementLabel"
+			],
+			[
+				"Actiit",
+				"activityPlaces"
+			],
+			[
+				"activity",
+				"activityName"
+			],
+			[
+				"char",
+				"charDict"
+			],
+			[
+				"cha",
+				"charLookup"
+			],
+			[
+				"plotLine",
+				"plotLinesObject"
+			],
+			[
+				"json",
+				"json_util"
+			],
+			[
+				"morth",
+				"moreThanOnePlaceMoreThanOneActivityInAtLeastOneOfThePlaces"
+			],
+			[
+				"plot",
+				"plotLineSum"
+			],
+			[
+				"plotelem",
+				"plotElements"
+			],
+			[
+				"plotLi",
+				"plotLineSum"
+			],
+			[
+				"plotLin",
+				"plotLinesObject"
+			],
+			[
+				"plotLines",
+				"plotLinesObject"
+			],
+			[
+				"plotL",
+				"plotline"
+			],
+			[
+				"plto",
+				"plotElements"
+			],
+			[
+				"to",
+				"toRemove"
+			],
+			[
+				"place",
+				"placeLookup"
+			],
+			[
+				"mor",
+				"moreThanOnePlace"
+			],
+			[
+				"moreth",
+				"moreThanOnePlaceMoreThanOneActivityInAtLeastOneOfThePlaces"
+			],
+			[
+				"plotele",
+				"plotElements"
+			],
+			[
+				"world",
+				"worldstates"
+			],
+			[
+				"pl",
+				"plotLineLabel"
+			],
+			[
+				"pe",
+				"peLookUp"
+			],
+			[
+				"ploe",
+				"plotElementLabel"
+			],
+			[
+				"founc",
+				"foundCharacters"
+			],
+			[
+				"plo",
+				"plotElementLabel"
+			],
+			[
+				"te",
+				"techNameLookup"
+			],
+			[
+				"tec",
+				"technical_name"
+			],
+			[
+				"found",
+				"foundCharacter"
+			],
+			[
+				"foundC",
+				"foundCharacter"
+			],
+			[
+				"exe",
+				"extend"
+			],
+			[
+				"fin",
+				"finalActivities"
+			],
+			[
+				"a",
+				"append"
+			],
+			[
+				"plotEleme",
+				"plotElements"
+			],
+			[
+				"foundPla",
+				"foundPlace"
+			],
+			[
+				"techni",
+				"technical_name"
+			],
+			[
+				"jo",
+				"json_util"
+			],
+			[
+				"activities",
+				"activitiesObject"
+			],
+			[
+				"jso",
+				"jsonObject"
+			],
+			[
+				"pan",
+				"pandasJson"
+			],
+			[
+				"js",
+				"jsonObject"
+			],
+			[
+				"re",
+				"replace"
+			],
+			[
+				"out",
+				"outObject"
+			],
+			[
+				"jS",
+				"jsonObject"
+			],
+			[
+				"pre",
+				"prettyNames"
+			],
+			[
+				"in",
+				"index\tstatement"
+			],
+			[
+				"get",
+				"get_town_schedule_data\tfunction"
+			],
+			[
+				"goo",
+				"GoogleSheets\tclass"
+			],
+			[
+				"repl",
+				"replaceFile\tstatement"
+			],
+			[
+				"read",
+				"readlines\tfunction"
+			],
+			[
+				"mape",
+				"mapeRowData\tstatement"
+			],
+			[
+				"write",
+				"write_multiactivities\tfunction"
+			],
+			[
+				"new",
+				"newNameCount\tstatement"
+			],
+			[
+				"iss",
+				"issubset\tfunction"
+			],
+			[
+				"pla",
+				"placeID"
+			],
+			[
+				"tod",
+				"todMatch\tstatement"
+			],
+			[
+				"newPE",
+				"newPe\tstatement"
+			],
+			[
+				"multi",
+				"multiActivityPlotElements\tstatement"
+			],
+			[
+				"palce",
+				"placeID\tparam"
+			],
+			[
+				"sha",
+				"sha1\tfunction"
+			],
+			[
+				"hash",
+				"hashlib\tmodule"
+			],
+			[
+				"mas",
+				"masterPlotLabel\tparam"
+			],
+			[
+				"time",
+				"timeOfDays"
+			],
+			[
+				"townsch",
+				"townScheduleEntry\tstatement"
+			],
+			[
+				"ton",
+				"townScheduleEntry\tstatement"
+			],
+			[
+				"tow",
+				"townScheduleEntries\tstatement"
+			],
+			[
+				"town",
+				"townScheduleEntry\tstatement"
+			],
+			[
+				"plotli",
+				"plotLineLabel\tparam"
+			],
+			[
+				"input",
+				"inputFileName\tstatement"
+			],
+			[
+				"tem",
+				"tempGotosAndChoices"
+			],
+			[
+				"concat",
+				"concat\t( items_..: any ): string Array"
+			],
+			[
+				"dialo",
+				"dialogue"
+			],
+			[
+				"consolo",
+				"console.log"
+			],
+			[
+				"solids",
+				"solidsNotLabels"
+			],
+			[
+				"pass",
+				"passageTargets"
+			],
+			[
+				"modu",
+				"modulesPassageTargets"
+			],
+			[
+				"passa",
+				"passages"
+			],
+			[
+				"passage",
+				"passageTargets"
+			],
+			[
+				"sol",
+				"solidID"
+			],
+			[
+				"module",
+				"moduleType"
+			],
+			[
+				"impos",
+				"impossiblePlotElements\tstatement"
+			],
+			[
+				"impo",
+				"impossiblePlotElements"
+			],
+			[
+				"ch",
+				"characters"
+			],
+			[
+				"charac",
+				"characterIDs\tstatement"
+			],
+			[
+				"tse",
+				"tseCharacter\tforstmt"
+			],
+			[
+				"townSchedule",
+				"townScheduleEntry"
+			],
+			[
+				"chac",
+				"characterMatches\tstatement"
+			],
+			[
+				"num",
+				"numCharacters\tstatement"
+			],
+			[
+				"townSc",
+				"townScheduleEntry"
+			],
+			[
+				"townS",
+				"townScheduleEntry"
+			],
+			[
+				"map",
+				"mappedPlotElements\tstatement"
+			],
+			[
+				"mapped",
+				"mappedString\tstatement"
+			],
+			[
+				"se",
+				"set_trace\tfunction"
+			],
+			[
+				"value",
+				"value_range_body\tstatement"
+			],
+			[
+				"valu",
+				"value_range_body\tstatement"
+			],
+			[
+				"Value",
+				"values\timport"
+			],
+			[
+				"api",
+				"apiclient"
+			],
+			[
+				"pr",
+				"prepper"
+			],
+			[
+				"sugg",
+				"suggestions\tstatement"
+			],
+			[
+				"po",
+				"possibleToDs\tstatement"
+			],
+			[
+				"int",
+				"intList\tstatement"
+			],
+			[
+				"plotelemen",
+				"plotElementID\tstatement"
+			],
+			[
+				"ece",
+				"execute"
+			],
+			[
+				"sprea",
+				"spreadsheetId\tstatement"
+			],
+			[
+				"spread",
+				"spreadsheetId"
+			],
+			[
+				"TOC",
+				"ToDChecker\tclass"
+			],
+			[
+				"impossi",
+				"impossibleFile\tstatement"
+			],
+			[
+				"suggesion",
+				"suggestionString\tstatement"
+			],
+			[
+				"sugges",
+				"suggestion\tforstmt"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "www/sftp-config.json",
+			"settings":
+			{
+				"buffer_size": 1345,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/WindDashboard.html",
+			"settings":
+			{
+				"buffer_size": 12866,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/TimeToTaskBar.js",
+			"settings":
+			{
+				"buffer_size": 3111,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/node_modules/chart.js/package.json",
+			"settings":
+			{
+				"buffer_size": 3354,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/node_modules/chartjs-color/package.json",
+			"settings":
+			{
+				"buffer_size": 3108,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/node_modules/chartjs-color-string/package.json",
+			"settings":
+			{
+				"buffer_size": 2778,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/node_modules/color-convert/package.json",
+			"settings":
+			{
+				"buffer_size": 2228,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/node_modules/color-name/package.json",
+			"settings":
+			{
+				"buffer_size": 2365,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/node_modules/feather-icons/package.json",
+			"settings":
+			{
+				"buffer_size": 3044,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/node_modules/moment/package.json",
+			"settings":
+			{
+				"buffer_size": 4694,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/ChemistryDashboard.html",
+			"settings":
+			{
+				"buffer_size": 9689,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/dashboardChemistryOLD.html",
+			"settings":
+			{
+				"buffer_size": 28343,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/dashboardTest.html",
+			"settings":
+			{
+				"buffer_size": 8588,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/dashboardTest2.html",
+			"settings":
+			{
+				"buffer_size": 8915,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/test.html",
+			"settings":
+			{
+				"buffer_size": 1793,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/JXA Build System/JXA.sublime-build",
+					""
+				],
+				[
+					"Packages/JXA Build System/JXA.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/JXA Build System/JXA.sublime-build",
+					"Build App"
+				],
+				[
+					"Packages/JXA Build System/JXA.sublime-build",
+					"Build Script Bundle"
+				]
+			],
+			[
+				"Packages/JXA Build System/JXA.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "acti",
+		"selected_items":
+		[
+			[
+				"acti",
+				"Conda: Activate Environment"
+			],
+			[
+				"activa",
+				"Conda: Activate Environment"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"ac",
+				"Conda: Activate Environment"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"activate",
+				"Conda: Activate Environment"
+			],
+			[
+				"packa",
+				"Package Control: Discover Packages"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: re",
+				"Package Control: Remove Package"
+			],
+			[
+				"package control inst",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Discover Packages"
+			],
+			[
+				"package control",
+				"Package Control: Enable Package"
+			]
+		],
+		"width": 652.0
+	},
+	"console":
+	{
+		"height": 297.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/holmgard/DevProjects/envisageserver"
+	],
+	"file_history":
+	[
+		"/Users/holmgard/DevProjects/envisageserver/www/envisageanalytics/envisageanalytics/__init__.py",
+		"/Users/holmgard/Library/Application Support/Sublime Text 3/Packages/User/SFTP.sublime-settings",
+		"/Users/holmgard/DevProjects/envisageserver/servermapping/sftp-config.json",
+		"/Users/holmgard/Desktop/dashboardtest/WindDashboard.html",
+		"/Users/holmgard/DevProjects/mutazione/Utilities/mongoconversion/plotLines.py",
+		"/Users/holmgard/DevProjects/mutazione/Utilities/mongoconversion/scratchpad.py",
+		"/Users/holmgard/Desktop/all_plotElements_in_game.txt",
+		"/Users/holmgard/anaconda/envs/plots/lib/python3.6/site-packages/pymongo/mongo_replica_set_client.py",
+		"/Users/holmgard/DevProjects/certif.ai/sentiment/stanfordSentimentTreebank/dictionary.txt",
+		"/Users/holmgard/Dropbox/Envisage/Envisage/Deliverables/UoM deliverables/2017-06-31 D3.1 Preliminary predictive analytics and course adaptation methods (WP3)/overleaf_repo/main.tex",
+		"/Users/holmgard/DevProjects/mutazione/Mutazione-Unity/Assets/_Game/Dialogues/_Connected/ailin_leaves.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/SoupSolution/Soupsolution/template.txt",
+		"/Users/holmgard/DevProjects/modldungeons/Unity-MiniDungeons/map1R",
+		"/Users/holmgard/DevProjects/mutazione/Utilities/mongoconversion/activities.py",
+		"/Users/holmgard/DevProjects/mutazione/Utilities/mongoconversion/townSchedule.json",
+		"/Users/holmgard/DevProjects/mutazione/Mutazione-Unity/Assets/_Game/Dialogues/_OmniGraffle/couldn_t_have_done_it_without_you_kai.txt",
+		"/Users/holmgard/Dropbox/Reviewing/TCIAIG/Learning How Design Choices Impact Player Behavior/s1-ln25809498-572651778-1939656818Hwf1506437890IdV-24247590425809498PDF_HI0001.txt",
+		"/Users/holmgard/DevProjects/modldungeons/Unity-MiniDungeons/Assets/Resources/AsciiMaps/ClassicMaps/Map2.txt",
+		"/Users/holmgard/Dropbox/Reviewing/TCIAIG/Learning How Design Choices Impact Player Behavior/Revisions/s1-ln27625315-258971889-1939656818Hwf-540779980IdV-97214075027625315PDF_HI0001 (1).pdf.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/4a_WaitingForFeatures/Pregnancy/Pregnancy_Plot_Line.graffle.Treatment: Swamp beech bark for sickness, swimming to help relax_stretch, Spectre’s Hands for aches.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/4a_WaitingForFeatures/Parasite/PlotLine_Parasite.graffle.Parasite treatment.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/6_RenamedToFitPlotElementsSheet/test.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/The tape/_The_tape.graffle.Spike's secret tape.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/4_StoryEditorFixup/fifthBatch.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/The tape/_The_tape.graffle.Spike is confronted with the tape.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Band Practice/_band_practice.graffle.Miu and Tung band practice 03.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Arcade/_Arcade.graffle.Ailin wins arcade game.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Arcade/_Arcade.graffle.Ailin encourages her unborn child to share her arcade enthusiasm.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/The tape/_The_tape.graffle.Plotting to get Spike and Claire together.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Leaving/_Leaving.graffle.Miu goodbye.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Arcade/PlotLine:_Arcade.graffle.Ailin encourages her unborn child to share her arcade enthusiasm.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Wife",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/Talk/PlotLine",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/Size",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/Issues.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Wife Talk/PlotLine:_Wife_Talk.graffle.Wife Size Issues.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Weather Chat/PlotLine:_Weather_Chat.graffle.Offers Kai an umbrella.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Wife Talk/PlotLine:_Wife_Talk.graffle.Quality Time Preparation.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Wife Talk/PlotLine:_Wife_Talk.graffle.Quality Time Outcome.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Weather Chat/PlotLine:_Weather_Chat.graffle.Nature and sensing storms.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Weather Chat/PlotLine:_Weather_Chat.graffle.Ageing and the changing seasons.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/U Phone Call/PlotLine:_U_Phone_Call.graffle.Team Meeting prep - Meditation U .export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/U Phone Call/PlotLine:_U_Phone_Call.graffle.Russells Blowing Techniques.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/U Phone Call/PlotLine:_U_Phone_Call.graffle.Less stressed - Meditation Talk.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/The tape/PlotLine:_The_tape.graffle.tape fallout 02 - alone.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/The tape/PlotLine:_The_tape.graffle.tape fallout 01.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/The tape/PlotLine:_The_tape.graffle.Spike's secret tape.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/The tape/PlotLine:_The_tape.graffle.Spike-Claire gossip Mori.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/The tape/PlotLine:_The_tape.graffle.Spike-Claire gossip Miu.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/The tape/PlotLine:_The_tape.graffle.Spike is confronted with the tape.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/The tape/PlotLine:_The_tape.graffle.Sorry for tape incident.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/The tape/PlotLine:_The_tape.graffle.Plotting to get Spike and Claire together.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/The tape/PlotLine:_The_tape.graffle.Planning how to fix the damage.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/The tape/PlotLine:_The_tape.graffle.Need a moment alone.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/The tape/PlotLine:_The_tape.graffle.First Date.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/The tape/PlotLine:_The_tape.graffle.arrange a meeting.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/The tape/PlotLine:_The_tape.graffle.After meeting arranged.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Team Meeting/PlotLine:_Team_Meeting.graffle.Team Communication Improvements.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Team Meeting/PlotLine:_Team_Meeting.graffle.Team Communication Crisis.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Talk to Wife/PlotLine:_Talk_to_wife.graffle.Talk to Dennis' Wife 03.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Talk to Wife/PlotLine:_Talk_to_wife.graffle.Talk to Dennis' Wife 02.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Talk to Wife/PlotLine:_Talk_to_wife.graffle.Talk to Dennis' Wife 01.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Russell Confessions/PlotLine:_Russell_Confessions.graffle.Wish Wife would lower her voice.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Russell Confessions/PlotLine:_Russell_Confessions.graffle.Stressed.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Russell Confessions/PlotLine:_Russell_Confessions.graffle.Sad about Nonno's Coma.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Russell Confessions/PlotLine:_Russell_Confessions.graffle.Hiding from Wife.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Russell/PlotLine:_Russell.graffle.Goodies Clue.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Russell/PlotLine:_Russell.graffle.Feeding Russell with goodies.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Music/PlotLine:_Music.graffle.relationship with music and blindness.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Music/PlotLine:_Music.graffle.practicing harpsicord.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Music/PlotLine:_Music.graffle.intro to harpsicord.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Listen to Dennis and Wife/PlotLine:_Listen_to_Dennis_and_Wife.graffle.Quality Time 03.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Listen to Dennis and Wife/PlotLine:_Listen_to_Dennis_and_Wife.graffle.Quality Time 02.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Listen to Dennis and Wife/PlotLine:_Listen_to_Dennis_and_Wife.graffle.Quality Time 01.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Leaving/PlotLine:_Leaving.graffle.Yoke goodbye .export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Leaving/PlotLine:_Leaving.graffle.Stir Fry farewell.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Leaving/PlotLine:_Leaving.graffle.Spike goodbye.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Leaving/PlotLine:_Leaving.graffle.Miu goodbye.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Leaving/PlotLine:_Leaving.graffle.Do you want to go say good bye?.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Leaving/PlotLine:_Leaving.graffle.Confirm arrangements to leave_say goodbye.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Leaving/PlotLine:_Leaving.graffle.Bopek bye.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Leaving/PlotLine:_Leaving.graffle.Ailin goodbye.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Hot Sauce and Lyrics/PlotLine:_Hot_sauce_and_lyrics.graffle.worries about hot sauce and lyrics - 'am I annoying?'.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Hot Sauce and Lyrics/PlotLine:_Hot_sauce_and_lyrics.graffle.working on new lyrics.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Hot Sauce and Lyrics/PlotLine:_Hot_sauce_and_lyrics.graffle.Tung helps Bopek with new lyrics.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Hangouts/PlotLine:_Hangouts.graffle.The importance of “seizing the day”.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Hangouts/PlotLine:_Hangouts.graffle.Talk about her house.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Hangouts/PlotLine:_Hangouts.graffle.Listening to Music.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Dancing/PlotLine:_Dancing.graffle.Graubert left alone.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Dancing/PlotLine:_Dancing.graffle.Graubert does something wrong, they argue.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Dancing/PlotLine:_Dancing.graffle.Graubert and Ailin dance.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Crush/PlotLine:_Crush.graffle.He trusts Kai.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Crush/PlotLine:_Crush.graffle.Feels different since she came.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Crush/PlotLine:_Crush.graffle.admits his crush.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Bopek Difference/PlotLine:_Bopek_difference.graffle.Bopek talks about being different.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Bath House/PlotLine:_Bath_House.graffle.Bath House Fixed.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Band Practice/PlotLine:_band_practice.graffle.Miu and Tung, no practice2, just talk about tape incident.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Band Practice/PlotLine:_band_practice.graffle.Miu and Tung, no practice1, just talk about tape incident.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Band Practice/PlotLine:_band_practice.graffle.Miu and Tung band practice 03.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/3_JSONExport/Arcade/PlotLine:_Arcade.graffle.Ailin wins arcade game.export.json.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/5_ConversionFirstPassDone/fourthBatch.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/7_TransferredToUnity/inTransferred.txt",
+		"/Users/holmgard/DevProjects/omnigraffleconversion/graffleexportjs2.js",
+		"/Users/holmgard/DevProjects/mutazione/Mutazione-Unity/Assets/_Game/Dialogues/alreadyIn.txt",
+		"/Users/holmgard/DevProjects/mutazione/Utilities/mongoconversion/README.txt",
+		"/Users/holmgard/Library/Application Support/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
+		"/Users/holmgard/Library/Application Support/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/Users/holmgard/Desktop/modldungeons/Assets/MonoStuff/Program.cs",
+		"/Users/holmgard/Desktop/temp.csv",
+		"/Users/holmgard/DevProjects/mutazione/Mutazione-Unity/Assets/_Game/Dialogues/allCurrentTextFiles.txt",
+		"/Users/holmgard/DevProjects/mutazione/Utilities/mongoconversion/activities.json",
+		"/Users/holmgard/DevProjects/mutazione/Utilities/mongoconversion/plotLines.json",
+		"/Users/holmgard/DevProjects/mutazione/Utilities/PlotsToJSON/plotElements_townSchedule_to_json.py",
+		"/Users/holmgard/DevProjects/mutazione/Utilities/mongoconversion/google_access.py",
+		"/Users/holmgard/DevProjects/mutazione/Utilities/PlotsToJSON/town_situations_data.json",
+		"/Users/holmgard/DevProjects/mutazione/Utilities/mongoconversion/worldStates.json",
+		"/Users/holmgard/DevProjects/mutazione/Utilities/mongoconversion/prettyPlaceNames.csv",
+		"/Users/holmgard/DevProjects/mutazione/Utilities/mongoconversion/plotElementsAndPlotLines.py",
+		"/Users/holmgard/DevProjects/mutazione/Utilities/PlotsToJSON/find_activities.py",
+		"/Users/holmgard/DevProjects/mutazione/Utilities/PlotsToJSON/data_prepper.py",
+		"/Users/holmgard/DevProjects/mutazione/Utilities/mongoconversion/plotElements.json",
+		"/Users/holmgard/DevProjects/mutazione/Utilities/mongoconversion/characterNames.txt",
+		"/Users/holmgard/DevProjects/mutazione/Mutazione-Unity/Assets/_Game/Dialogues/_Connected/ailin_is_crying.txt",
+		"/Users/holmgard/DevProjects/mutazione/Utilities/mongoconversion/test.json",
+		"/Users/holmgard/Library/Application Support/Sublime Text 3/Packages/Pretty JSON/Pretty JSON.sublime-settings",
+		"/Users/holmgard/DevProjects/mutazione/Utilities/mongoconversion/townSchedule.csv",
+		"/Users/holmgard/Dropbox/Writing/NVIDIA Hardware Grant/6538290rjxbdr/main.tex",
+		"/Users/holmgard/DevProjects/envisage_viz/eventValuesBonding.txt"
+	],
+	"find":
+	{
+		"height": 42.0
+	},
+	"find_in_files":
+	{
+		"height": 139.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"chart-FuelSpend",
+			"ctx",
+			"mediantimeontask",
+			"2d",
+			"DashboardTest",
+			"DashBoardTest"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"dashboardtest"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "www/sftp-config.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1345,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								427,
+								427
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										430,
+										431
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/double_quote.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										406,
+										407
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/WindDashboard.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12866,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12053,
+								12053
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										12054,
+										12055
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										10756,
+										10757
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 8078.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/TimeToTaskBar.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3111,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1314,
+								1314
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 730.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/node_modules/chart.js/package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3354,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										3352,
+										3353
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										0,
+										1
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/node_modules/chartjs-color/package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3108,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										3106,
+										3107
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										0,
+										1
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/node_modules/chartjs-color-string/package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2778,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										2776,
+										2777
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										0,
+										1
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/node_modules/color-convert/package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2228,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										2226,
+										2227
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										0,
+										1
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/node_modules/color-name/package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2365,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										2363,
+										2364
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										0,
+										1
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/node_modules/feather-icons/package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3044,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										3042,
+										3043
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										0,
+										1
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/node_modules/moment/package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4694,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										4692,
+										4693
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										0,
+										1
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/ChemistryDashboard.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9689,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1331,
+								1331
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1786,
+										1790
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/tag.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1326,
+										1330
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 93.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/dashboardChemistryOLD.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 28343,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/dashboardTest.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8588,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/dashboardTest2.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8915,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										14,
+										15
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/angle_bracket.png",
+										"region.orangish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										0,
+										1
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "www/envisageanalytics/envisageanalytics/static/dashboardtest/test.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1793,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										14,
+										15
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/angle_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										0,
+										1
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 49.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 436.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.latextools":
+	{
+		"height": 124.0
+	},
+	"output.markdown":
+	{
+		"height": 142.0
+	},
+	"output.sftp":
+	{
+		"height": 592.0
+	},
+	"output.variable_get":
+	{
+		"height": 106.0
+	},
+	"pinned_build_system": "Packages/Conda/Conda.sublime-build",
+	"project": "envisageserver.sublime-project",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"global",
+				"Assets/OLD/Scripts/Global.cs"
+			],
+			[
+				"boots",
+				"Assets/Scripts/BootstrapAndLoad/BootstrapAndLoadWithMusic.cs"
+			],
+			[
+				"scenecon",
+				"Assets/OLD/Scripts/SceneController.cs"
+			],
+			[
+				"specs",
+				"Assets/MutazioneSpecifications/Code/Specs_Scene.cs"
+			],
+			[
+				"dbfun",
+				"Assets/Scripts/ConversationSystem/DBFunctions.cs"
+			],
+			[
+				"boot",
+				"Assets/Scripts/BootstrapAndLoad/BootstrapAndLoadWithMusic.cs"
+			],
+			[
+				"time",
+				"Assets/OLD/Scripts/TimeManager.cs"
+			],
+			[
+				"oldtime",
+				"Assets/Scripts/BootstrapAndLoad/OldTimeManagerHelper.cs"
+			],
+			[
+				"timem",
+				"Assets/OLD/Scripts/TimeManager.cs"
+			],
+			[
+				"scne",
+				"Assets/OLD/Scripts/SceneController.cs"
+			],
+			[
+				"dbe",
+				"Assets/Scripts/Usefull Stuff/DBExporter.cs"
+			],
+			[
+				"scene",
+				"Assets/OLD/Scripts/SceneController.cs"
+			],
+			[
+				"timeman",
+				"Assets/OLD/Scripts/TimeManager.cs"
+			],
+			[
+				"",
+				"Assets/Scripts/simulator/SimLevel.cs"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/DevProjects/mutazione_doougle/trunk/Audio Prototypes/christoffers_project_file.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 316.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

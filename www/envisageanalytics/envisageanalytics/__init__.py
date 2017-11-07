@@ -12,9 +12,9 @@ def root():
     outputAddress = 'dashboardtest/WindDashboard.html'
     if 'lab' in getParams:
         labType = getParams['lab']
-        if labType == 'wind':
+        if labType == 'energy':
             outputAddress = 'dashboardtest/WindDashboard.html'
-        if labType == 'bonding':
+        if labType == 'chemistry':
             outputAddress = 'dashboardtest/ChemistryDashboard.html'
     return app.send_static_file(outputAddress)
 

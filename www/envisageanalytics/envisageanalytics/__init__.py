@@ -16,6 +16,8 @@ def root():
             outputAddress = 'dashboardtest/WindDashboard.html'
         if labType == 'chemistry':
             outputAddress = 'dashboardtest/ChemistryDashboard.html'
+        if labType == 'taskgenerator':
+            outputAddress = 'dashboardtest/task_generator.html'
     return app.send_static_file(outputAddress)
 
 @app.route('/<path:path>')

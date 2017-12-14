@@ -18,6 +18,14 @@ def root():
             outputAddress = 'dashboardtest/ChemistryDashboard.html'
         if labType == 'taskgenerator':
             outputAddress = 'dashboardtest/task_generator.html'
+    if 'game_type' in getParams:
+        game_type = getParams['game_type']
+        if game_type == 'energy':
+            outputAddress = 'dashboardtest/WindDashboard.html'
+        if game_type == 'chemistry':
+            outputAddress = 'dashboardtest/ChemistryDashboard.html'
+        if game_type == 'taskgenerator':
+            outputAddress = 'dashboardtest/task_generator.html'
     return app.send_static_file(outputAddress)
 
 @app.route('/<path:path>')

@@ -2,7 +2,7 @@ library(cluster)
 library(archetypes)
 library(readr)
 
-windUser <- read_csv("~/DevProjects/envisageserver/dataintegration/windUser.csv", 
+windUser <- read_csv("windUser.csv", 
                      col_types = cols(addTurbine = col_logical(), 
                                       changedPower = col_logical(), changedSimSpeed = col_logical(), 
                                       changedWind = col_logical(), correctPower = col_logical(), 

@@ -1,4 +1,8 @@
 from get_lab_data import GetLabData, RefreshDataInMongoDB
+from calculate_bonding_features import CalculateBondingFeatures
+from calculate_wind_features import CalculateWindFeatures
+from write_to_csv import WriteToCsv
+from generate_html import GenerateHTML
 
 # Windlab
 wind_app_key = '90e167a8ba993ab18f52ec7fdb44fdea'
@@ -34,4 +38,8 @@ GetLabData(bonding_app_key,
            bonding_master_key,
            'BondingLab.json', 'bonding')
 
-# RefreshDataInMongoDB('BondingLab.json', 'bonding')
+RefreshDataInMongoDB('BondingLab.json', 'bonding')
+CalculateWindFeatures()
+CalculateBondingFeatures()
+WriteToCsv()
+GenerateHTML()

@@ -57,56 +57,57 @@ def PowerRatios(df):
     return result
 
 
-mongoClient = MongoClient('127.0.0.1')
-db = mongoClient.envisage
+def CalculateWindFeatures(self):
+    mongoClient = MongoClient('127.0.0.1')
+    db = mongoClient.envisage
 
-windUsers = list()
-usersLookup = db.wind.distinct('user_id')
+    windUsers = list()
+    usersLookup = db.wind.distinct('user_id')
 
-for user in usersLookup:
-    # Prepare user object
-    windUser = dict()
+    for user in usersLookup:
+        # Prepare user object
+        windUser = dict()
 
-    # Get all entries from user
-    entryLookup = db.wind.find({'user_id': user})
-    dataBuffer = list()
-    for entry in entryLookup:
-        dataBuffer.append(entry)
-    userDf = pd.DataFrame(dataBuffer)
-    # Power status ratios
-    windUser['userId'] = user
-    windUser['powerStats'] = PowerRatios(userDf)
-    # Reached correct power
-    if 'event_value' in userDf:
-        windUser['correctPower'] = \
-            True in userDf.event_value.isin(['-Correct power']).unique()
-    # Added turbine
-    if 'event' in userDf:
-        windUser['addTurbine'] = \
-            True in userDf.event.isin(['add.turbine']).unique()
-    # Turbine on/off
-    if 'event' in userDf:
-        windUser['turbineOnOff'] = \
-            (True in userDf.event.isin(['disable.turbine']).unique() or
-                True in userDf.event.isin(['enable.turbine']).unique())
-    # Repaired turbine
-    if 'event' in userDf:
-        windUser['repairedTurbine'] = \
-            True in userDf.event.isin(['repair.turbine']).unique()
-    # Changed wind speed
-    if 'event' in userDf:
-        windUser['changedWind'] = \
-            True in userDf.event.isin(['configure.wind_speed']).unique()
-    # Changed power requirements
-    if 'event' in userDf:
-        windUser['changedPower'] = \
-            True in userDf.event.isin(['configure.power']).unique()
-    # Changed simulation speed
-    if 'event' in userDf:
-        windUser['changedSimSpeed'] = \
-            True in userDf.event.isin(['configure.simulation_speed']).unique()
-    windUsers.append(windUser)
+        # Get all entries from user
+        entryLookup = db.wind.find({'user_id': user})
+        dataBuffer = list()
+        for entry in entryLookup:
+            dataBuffer.append(entry)
+        userDf = pd.DataFrame(dataBuffer)
+        # Power status ratios
+        windUser['userId'] = user
+        windUser['powerStats'] = PowerRatios(userDf)
+        # Reached correct power
+        if 'event_value' in userDf:
+            windUser['correctPower'] = \
+                True in userDf.event_value.isin(['-Correct power']).unique()
+        # Added turbine
+        if 'event' in userDf:
+            windUser['addTurbine'] = \
+                True in userDf.event.isin(['add.turbine']).unique()
+        # Turbine on/off
+        if 'event' in userDf:
+            windUser['turbineOnOff'] = \
+                (True in userDf.event.isin(['disable.turbine']).unique() or
+                    True in userDf.event.isin(['enable.turbine']).unique())
+        # Repaired turbine
+        if 'event' in userDf:
+            windUser['repairedTurbine'] = \
+                True in userDf.event.isin(['repair.turbine']).unique()
+        # Changed wind speed
+        if 'event' in userDf:
+            windUser['changedWind'] = \
+                True in userDf.event.isin(['configure.wind_speed']).unique()
+        # Changed power requirements
+        if 'event' in userDf:
+            windUser['changedPower'] = \
+                True in userDf.event.isin(['configure.power']).unique()
+        # Changed simulation speed
+        if 'event' in userDf:
+            windUser['changedSimSpeed'] = \
+                True in userDf.event.isin(['configure.simulation_speed']).unique()
+        windUsers.append(windUser)
 
-print(json.dumps(windUsers, indent=4))
-db.windUser.delete_many({})
-db.windUser.insert_many(windUsers)
+    print(json.dumps(windUsers, indent=4))
+    db.windUser.delete_many({})
+    db.windUser.insert_many(windUsers)

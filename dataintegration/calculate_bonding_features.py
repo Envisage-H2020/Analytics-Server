@@ -104,82 +104,83 @@ def ChooseBond(df, molecule):
     return timesOnTask
 
 
-mongoClient = MongoClient('127.0.0.1')
-db = mongoClient.envisage
+def CalculateBondingFeatures(self):
+    mongoClient = MongoClient('127.0.0.1')
+    db = mongoClient.envisage
 
-molecules = ["HCl", "H2O", "NaF", "NaCl", "KBr", "CH4", "CaCl2", "CF4"]
+    molecules = ["HCl", "H2O", "NaF", "NaCl", "KBr", "CH4", "CaCl2", "CF4"]
 
-bondingUsers = list()
-usersLookup = db.bonding.distinct('user_id')
-for user in usersLookup:
-    # Prepare user object
-    bondingUser = BondingUser(user)
+    bondingUsers = list()
+    usersLookup = db.bonding.distinct('user_id')
+    for user in usersLookup:
+        # Prepare user object
+        bondingUser = BondingUser(user)
 
-    # Get all entries from user
-    entryLookup = db.bonding.find({'user_id': user})
-    dataBuffer = list()
-    for entry in entryLookup:
-        dataBuffer.append(entry)
-    userDf = pd.DataFrame(dataBuffer)
+        # Get all entries from user
+        entryLookup = db.bonding.find({'user_id': user})
+        dataBuffer = list()
+        for entry in entryLookup:
+            dataBuffer.append(entry)
+        userDf = pd.DataFrame(dataBuffer)
 
-    # Periodic table help task
-    bondingUser.periodicTableCount = PeriodicTableCount(userDf)
+        # Periodic table help task
+        bondingUser.periodicTableCount = PeriodicTableCount(userDf)
 
-    # Write formula task
-    completionCounts = 0
-    writeFormula = dict()
-    for molecule in molecules:
-        key = 'writeFormula' + molecule
-        attempts = WriteFormula(userDf, molecule)
-        completionCounts += len(attempts)
-        writeFormula[key] = attempts
-    # if completionCounts > 0:
-        # print("--- Write Formula ---")
-        # print(completionCounts)
-    bondingUser.writeFormula = writeFormula
-    # Completion Count: Write formula
-    bondingUser.completionCountWriteFormula = completionCounts
+        # Write formula task
+        completionCounts = 0
+        writeFormula = dict()
+        for molecule in molecules:
+            key = 'writeFormula' + molecule
+            attempts = WriteFormula(userDf, molecule)
+            completionCounts += len(attempts)
+            writeFormula[key] = attempts
+        # if completionCounts > 0:
+            # print("--- Write Formula ---")
+            # print(completionCounts)
+        bondingUser.writeFormula = writeFormula
+        # Completion Count: Write formula
+        bondingUser.completionCountWriteFormula = completionCounts
 
-    # Choose bond type task
-    completionCounts = 0
-    chooseBond = dict()
-    for molecule in molecules:
-        key = 'chooseBond' + molecule
-        attempts = ChooseBond(userDf, molecule)
-        completionCounts += len(attempts)
-        chooseBond[key] = attempts
-    # if completionCounts > 0:
-        # print("--- Choose Bond ---")
-        # print(completionCounts)
-    bondingUser.chooseBond = chooseBond
-    # Completion Count: Choose Bond
-    bondingUser.completionCountChooseBond = completionCounts
+        # Choose bond type task
+        completionCounts = 0
+        chooseBond = dict()
+        for molecule in molecules:
+            key = 'chooseBond' + molecule
+            attempts = ChooseBond(userDf, molecule)
+            completionCounts += len(attempts)
+            chooseBond[key] = attempts
+        # if completionCounts > 0:
+            # print("--- Choose Bond ---")
+            # print(completionCounts)
+        bondingUser.chooseBond = chooseBond
+        # Completion Count: Choose Bond
+        bondingUser.completionCountChooseBond = completionCounts
 
-    # Attempt Count: Write Formula
-    attemptCounts = 0
-    attemptCountsWriteFormulas = dict()
-    for molecule in molecules:
-        key = 'attemptsWriteFormula' + molecule
-        attempts = AttemptCountWriteFormula(userDf, molecule)
-        attemptCounts += attempts
-        attemptCountsWriteFormulas[key] = attempts
-    # if attemptCounts > 0:
-        # print("--- Attempts ---")
-        # print(attemptCounts)
-    bondingUser.attemptCountsWriteFormulas = attemptCountsWriteFormulas
-    bondingUser.attemptCountsWriteFormula = attemptCounts
+        # Attempt Count: Write Formula
+        attemptCounts = 0
+        attemptCountsWriteFormulas = dict()
+        for molecule in molecules:
+            key = 'attemptsWriteFormula' + molecule
+            attempts = AttemptCountWriteFormula(userDf, molecule)
+            attemptCounts += attempts
+            attemptCountsWriteFormulas[key] = attempts
+        # if attemptCounts > 0:
+            # print("--- Attempts ---")
+            # print(attemptCounts)
+        bondingUser.attemptCountsWriteFormulas = attemptCountsWriteFormulas
+        bondingUser.attemptCountsWriteFormula = attemptCounts
 
-    # Assign user to dict
-    # bondingUsers[user] = bondingUser
-    bondingUsers.append(bondingUser)
+        # Assign user to dict
+        # bondingUsers[user] = bondingUser
+        bondingUsers.append(bondingUser)
 
-file = open('bondingData.json', 'w')
-jsonData = json.dumps(bondingUsers, cls=BondingEncoder, indent=4)
-file.write(jsonData)
-myList = json.loads(jsonData)
+    file = open('bondingData.json', 'w')
+    jsonData = json.dumps(bondingUsers, cls=BondingEncoder, indent=4)
+    file.write(jsonData)
+    myList = json.loads(jsonData)
 
-mongoClient = MongoClient('127.0.0.1')
-db = mongoClient.envisage
-db.bondingUser.delete_many({})
-for entry in myList:
-    db.bondingUser.insert_one(entry)
+    mongoClient = MongoClient('127.0.0.1')
+    db = mongoClient.envisage
+    db.bondingUser.delete_many({})
+    for entry in myList:
+        db.bondingUser.insert_one(entry)

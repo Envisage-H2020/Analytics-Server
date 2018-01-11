@@ -1,0 +1,1 @@
+add.bonding,launch,remove.element,reset.table,help.periodic_table,check.table,check.bond,check.electrons,check.bond_type,reset.electrons,select.molecule,set.electron,start.lab,finish.lab,remove.electron,help.electrons,restart.lab,gtm.dom,gtm.load,gtm.js

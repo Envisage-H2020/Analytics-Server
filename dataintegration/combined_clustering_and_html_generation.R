@@ -37,6 +37,7 @@ transposed = rbind(transposed, displayed$repairedTurbine)
 transposed = rbind(transposed, displayed$changedWind)
 transposed = rbind(transposed, displayed$changedPower)
 transposed = rbind(transposed, displayed$changedSimSpeed)
+STUDENT_NAMES <- paste("'",paste(as.character(chosenNames), collapse = "','"),"'")
 names(transposed) <- STUDENT_NAMES
 output <- ""
 for(i in 1:length(transposed)){

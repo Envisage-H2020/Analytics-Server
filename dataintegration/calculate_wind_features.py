@@ -57,7 +57,7 @@ def PowerRatios(df):
     return result
 
 
-def CalculateWindFeatures(self):
+def CalculateWindFeatures():
     mongoClient = MongoClient('127.0.0.1')
     db = mongoClient.envisage
 

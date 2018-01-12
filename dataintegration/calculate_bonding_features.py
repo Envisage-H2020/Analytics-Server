@@ -104,7 +104,7 @@ def ChooseBond(df, molecule):
     return timesOnTask
 
 
-def CalculateBondingFeatures(self):
+def CalculateBondingFeatures():
     mongoClient = MongoClient('127.0.0.1')
     db = mongoClient.envisage
 

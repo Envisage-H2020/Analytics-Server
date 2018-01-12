@@ -1,0 +1,52 @@
+"event"	"event_id"	"event_value"
+"check"	"4-methyl-2-pentanone"	"false"
+"check"	"methanol"	"true"
+"check"	"propanone"	"false"
+"check"	"methane"	"true"
+"check"	"ethanol"	"false"
+"check"	"ethanol"	"true"
+"check"	"ethanoic acid"	"false"
+"check"	"ethene"	"true"
+"check"	"ethanoic acid"	"true"
+"check"	"butane"	"true"
+"drop"	"4-methyl-2-pentanone"	NA
+"drop"	"4-methyl-2-pentanone"	"false"
+"drop"	"methane"	NA
+"drop"	"methanol"	"false"
+"drop"	"ethene"	"true"
+"drop"	"ethanoic acid"	"false"
+"drop"	"butane"	"true"
+"drop"	"propanone"	"false"
+"drop"	"ethanol"	"true"
+"drop"	"ethanoic acid"	"true"
+"drop"	"methanol"	NA
+"drop"	"butane"	NA
+"drop"	"ethanoic acid"	NA
+"gtm.dom"	NA	NA
+"gtm.js"	NA	NA
+"gtm.load"	NA	NA
+"launch"	NA	NA
+"reset"	"4-methyl-2-pentanone"	"false"
+"reset"	"ethanol"	"true"
+"reset"	"methanol"	"false"
+"reset"	"ethanoic acid"	"true"
+"reset"	"butane"	"true"
+"reset"	"propanone"	"true"
+"reset"	"methanol"	"true"
+"reset"	"methane"	"false"
+"reset"	"ethene"	"true"
+"reset"	"methylpropanal"	NA
+"select.molecule"	"--"	NA
+"select.molecule"	"methanol"	"true"
+"select.molecule"	"methane"	"false"
+"select.molecule"	"ethanol"	"true"
+"select.molecule"	"butane"	"true"
+"select.molecule"	"methanol"	"false"
+"select.molecule"	"ethanoic acid"	"true"
+"select.molecule"	"ethene"	"true"
+"select.molecule"	"propanone"	"true"
+"select.molecule"	"methylpropanal"	NA
+"start"	"stage_1"	"false"
+"start"	"stage_1"	NA
+"start"	"stage_3"	"true"
+"start"	"stage_1"	"true"

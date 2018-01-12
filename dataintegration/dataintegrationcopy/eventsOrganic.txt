@@ -1,0 +1,1 @@
+launch,choose.molecule,select.compound,select.functional_group,start,drop.mol_structure,select.mol_structure,select.molecule,gtm.dom,gtm.js,gtm.load,restart

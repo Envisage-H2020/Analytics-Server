@@ -15,20 +15,34 @@ windUser <- read_csv("windUser.csv",
 noMissing <- windUser[complete.cases(windUser),]
 activeData <- noMissing[c("powerStats.correct","powerStats.medianTimeOnTask","powerStats.over","powerStats.under")]
 kMeansFit <- kmeans(activeData, 4)
+
+#NEEDED: A list containing the 10 indices of the chosen students
+#unique id is called userId
+
 #noMissing <- sample(x = noMissing, size = 10, replace = FALSE)
-one <- length(which(kMeansFit$cluster == 1))
-two <- length(which(kMeansFit$cluster == 2))
-three <- length(which(kMeansFit$cluster == 3))
-four <- length(which(kMeansFit$cluster == 4))
 
 # Prepare the tables for display in HTML
 noStudentsToShow <- 10
 totalStudents <- nrow(noMissing)
 
+
 displayed <- noMissing
 displayed <- displayed[sample(nrow(displayed), size = noStudentsToShow, replace = FALSE),]
 studentNames <- c("Peter","Maria","Lea","Giannis","Mathias","Else", "Anna", "Spiros", "Carl", "Bo")
-chosenNames <- sample(x = studentNames, size = nrow(displayed), replace = TRUE)
+chosenNames <- sample(x = studentNames, size = nrow(displayed), replace = FALSE)
+
+
+#search for indices of chosen userIds
+#str(displayed$userId)
+displayIds <- match(displayed$userId, noMissing$userId)
+displayClusters <- kMeansFit$cluster[c(displayIds)]
+#cat(displayClusters)
+
+one <- length(which(displayClusters == 1))
+two <- length(which(displayClusters == 2))
+three <- length(which(displayClusters == 3))
+four <- length(which(displayClusters == 4))
+
 transposed = data.frame()
 transposed = rbind(transposed, displayed$correctPower)
 transposed = rbind(transposed, displayed$addTurbine)
@@ -37,11 +51,11 @@ transposed = rbind(transposed, displayed$repairedTurbine)
 transposed = rbind(transposed, displayed$changedWind)
 transposed = rbind(transposed, displayed$changedPower)
 transposed = rbind(transposed, displayed$changedSimSpeed)
-STUDENT_NAMES <- paste("'",paste(as.character(chosenNames), collapse = "','"),"'")
+STUDENT_NAMES <- paste("'",paste(as.character(studentNames), collapse = "','"),"'")
 names(transposed) <- STUDENT_NAMES
 output <- ""
 for(i in 1:length(transposed)){
-  header <- c("<tr>",paste("<td>",chosenNames[i],"</td>",sep=""))
+  header <- c("<tr>",paste("<td>",studentNames[i],"</td>",sep=""))
   temp <- as.character(transposed[,i])
   temp <- gsub("TRUE", "<td><i class='fa fa-check text-success'></i></td>", temp)
   temp <- gsub("FALSE", "<td></td>", temp)

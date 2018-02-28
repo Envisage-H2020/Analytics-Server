@@ -216,7 +216,7 @@ var ctx = document.getElementById("medianTimeOnTask").getContext('2d');
 var myChart = new Chart(ctx, {
   type: 'bar',
     data: {
-        labels: ['Peter', 'Elsa','Giannis', 'Spiros','Mathias', 'Carl', 'Anna', 'Bo','Maria','Lea'],
+        labels: [STUDENT_NAMES],
         datasets: [
           {
               type: 'line',
@@ -227,7 +227,8 @@ var myChart = new Chart(ctx, {
               label: 'Class Median',
               data: [COMMON_MEDIAN]
           },{
-            backgroundColor: [window.chartColors.green,window.chartColors.green,window.chartColors.green,window.chartColors.yellow,window.chartColors.orange,window.chartColors.yellow,window.chartColors.yellow,window.chartColors.orange,window.chartColors.yellow,window.chartColors.orange],
+            //exbackgroundColor: [window.chartColors.green,window.chartColors.green,window.chartColors.green,window.chartColors.yellow,window.chartColors.orange,window.chartColors.yellow,window.chartColors.yellow,window.chartColors.orange,window.chartColors.yellow,window.chartColors.orange],
+            backgroundColor: [CHART_COLORS],
             borderColor: window.chartColors.green,
             label: ['Median Time on Task, colored by cluster'],
             data: [INDIVIDUAL_MEDIAN]
@@ -267,7 +268,7 @@ var ctx = document.getElementById("powerStatus").getContext('2d');
 var powerStatus = new Chart(ctx, {
     type: 'horizontalBar',
     data: {
-        labels: ['Peter', 'Else','Giannis', 'Spiros','Mathias', 'Carl', 'Anna', 'Bo','Maria','Lea'],
+        labels: [STUDENT_NAMES],
         datasets: [{
             label: 'Correctly powered',
             data: [CORRECT],

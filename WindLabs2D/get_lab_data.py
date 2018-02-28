@@ -16,7 +16,7 @@ def GetLabData(appKey, masterKey, filePath, mongoCollection):
 
     # workingDir = os.getcwd()
     file = open(filePath, 'wb')
-    for yea in range(2018, 2019):
+    for yea in range(2017, 2018):
         year = str(yea)
         for mon in range(1, 12):
             if(mon < 10):

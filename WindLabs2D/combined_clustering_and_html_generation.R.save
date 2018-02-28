@@ -15,9 +15,11 @@ windUser <- read_csv("windUser.csv",
 noMissing <- windUser[complete.cases(windUser),]
 activeData <- noMissing[c("powerStats.correct","powerStats.medianTimeOnTask","powerStats.over","powerStats.under")]
 kMeansFit <- kmeans(activeData, 4)
-
-#NEEDED: A list containing the 10 indices of the chosen students
-#unique id is called userId
+#noMissing <- sample(x = noMissing, size = 10, replace = FALSE)
+one <- length(which(kMeansFit$cluster == 1))
+two <- length(which(kMeansFit$cluster == 2))
+three <- length(which(kMeansFit$cluster == 3))
+four <- length(which(kMeansFit$cluster == 4))
 
 # Prepare the tables for display in HTML
 noStudentsToShow <- 10
@@ -25,19 +27,11 @@ totalStudents <- nrow(noMissing)
 
 displayed <- noMissing
 displayed <- displayed[sample(nrow(displayed), size = noStudentsToShow, replace = FALSE),]
-#studentNames <- c("Peter","Maria","Lea","Giannis","Mathias","Else", "Anna", "Spiros", "Carl", "Bo")
-#chosenNames <- sample(x = studentNames, size = nrow(displayed), replace = FALSE)
+studentNames <- c("Peter","Maria","Lea","Giannis","Mathias","Else", "Anna", "Spiros", "Carl", "Bo")
+chosenNames <- sample(x = studentNames, size = nrow(displayed), replace = TRUE)
 
-#search for indices of chosen userIds
-displayIds <- match(displayed$userId, noMissing$userId)
-chosenNames <- c(displayIds)
-displayClusters <- kMeansFit$cluster[chosenNames] 
-#what does the above do?
-
-one <- length(which(displayClusters == 1))
-two <- length(which(displayClusters == 2))
-three <- length(which(displayClusters == 3))
-four <- length(which(displayClusters == 4))
+#testing program output
+unlist(noMis)
 
 transposed = data.frame()
 transposed = rbind(transposed, displayed$correctPower)
@@ -50,7 +44,6 @@ transposed = rbind(transposed, displayed$changedSimSpeed)
 STUDENT_NAMES <- paste("'",paste(as.character(chosenNames), collapse = "','"),"'")
 names(transposed) <- STUDENT_NAMES
 output <- ""
-color_output <- ""
 for(i in 1:length(transposed)){
   header <- c("<tr>",paste("<td>",chosenNames[i],"</td>",sep=""))
   temp <- as.character(transposed[,i])
@@ -58,12 +51,7 @@ for(i in 1:length(transposed)){
   temp <- gsub("FALSE", "<td></td>", temp)
   footer <- "</tr>"
   output <- c(output,header,temp,footer)
-  color_output <- paste(color_output,'window.chartColors.',displayClusters[i],',');
 }
-color_output <- gsub("1","green", color_output)
-color_output <- gsub("2","yellow", color_output)
-color_output <- gsub("3","orange", color_output)
-color_output <- gsub("4","red", color_output)
 
 # Prepare summary data for HTML
 NO_STUDENTS_TO_SHOW <- noStudentsToShow
@@ -71,12 +59,11 @@ TOTAL_STUDENTS <- totalStudents
 STUDENT_NAMES <- paste("'",paste(as.character(chosenNames), collapse = "','"),"'")
 WIND_TABLES <- paste(output, collapse = "")
 CLUSTER_COUNTS <- paste(as.character(one),as.character(two),as.character(three),as.character(four),sep = ",")
-COMMON_MEDIAN <- paste(as.character(rep(median(noMissing$powerStats.medianTimeOnTask), nrow(displayed))), collapse = ",")
+COMMON_MEDIAN <- paste(as.character(rep(median(displayed$powerStats.medianTimeOnTask), nrow(displayed))), collapse = ",")
 INDIVIDUAL_MEDIAN <- paste(as.character(round(displayed$powerStats.medianTimeOnTask,0)), collapse=",")
 CORRECT <- paste(as.character(round(displayed$powerStats.correct*100,0)), collapse=",")
 UNDER <- paste(as.character(round(displayed$powerStats.under*100,0)), collapse=",")
 OVER <- paste(as.character(round(displayed$powerStats.over*100,0)), collapse=",")
-CHART_COLORS <- paste(color_output)
 
 # Load the HTML
 templateHTML <- read_file(file = "WindTemplate.html")
@@ -91,5 +78,4 @@ outputHTML <- gsub(x = outputHTML, pattern = "INDIVIDUAL_MEDIAN", replacement = 
 outputHTML <- gsub(x = outputHTML, pattern = "CORRECT", replacement = CORRECT, ignore.case = FALSE, fixed = TRUE, useBytes = FALSE)
 outputHTML <- gsub(x = outputHTML, pattern = "UNDER", replacement = UNDER, ignore.case = FALSE, fixed = TRUE, useBytes = FALSE)
 outputHTML <- gsub(x = outputHTML, pattern = "OVER", replacement = OVER, ignore.case = FALSE, fixed = TRUE, useBytes = FALSE)
-outputHTML <- gsub(x = outputHTML, pattern = "CHART_COLORS", replacement = CHART_COLORS, ignore.case = FALSE, fixed = TRUE, useBytes = FALSE)
 write_file(outputHTML, path = "WindDashBoard.html")

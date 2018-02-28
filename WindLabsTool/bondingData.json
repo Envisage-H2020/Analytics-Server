@@ -1,0 +1,342 @@
+[
+    {
+        "completionCountChooseBond": 0,
+        "attemptCountsWriteFormulas": {
+            "attemptsWriteFormulaCaCl2": 0,
+            "attemptsWriteFormulaCH4": 0,
+            "attemptsWriteFormulaH2O": 0,
+            "attemptsWriteFormulaNaF": 0,
+            "attemptsWriteFormulaKBr": 0,
+            "attemptsWriteFormulaHCl": 0,
+            "attemptsWriteFormulaNaCl": 0,
+            "attemptsWriteFormulaCF4": 0
+        },
+        "periodicTableCount": 0,
+        "userId": "37188db4-140d-8ff7-0f02-9efcd580f240",
+        "attemptCountsWriteFormula": 0,
+        "writeFormula": {
+            "writeFormulaH2O": [],
+            "writeFormulaKBr": [],
+            "writeFormulaCaCl2": [],
+            "writeFormulaNaF": [],
+            "writeFormulaNaCl": [],
+            "writeFormulaCH4": [],
+            "writeFormulaCF4": [],
+            "writeFormulaHCl": []
+        },
+        "chooseBond": {
+            "chooseBondCH4": [],
+            "chooseBondNaCl": [],
+            "chooseBondCF4": [],
+            "chooseBondKBr": [],
+            "chooseBondCaCl2": [],
+            "chooseBondHCl": [],
+            "chooseBondH2O": [],
+            "chooseBondNaF": []
+        },
+        "completionCountWriteFormula": 0
+    },
+    {
+        "completionCountChooseBond": 0,
+        "attemptCountsWriteFormulas": {
+            "attemptsWriteFormulaCaCl2": 0,
+            "attemptsWriteFormulaCH4": 0,
+            "attemptsWriteFormulaH2O": 0,
+            "attemptsWriteFormulaNaF": 0,
+            "attemptsWriteFormulaKBr": 0,
+            "attemptsWriteFormulaHCl": 0,
+            "attemptsWriteFormulaNaCl": 0,
+            "attemptsWriteFormulaCF4": 0
+        },
+        "periodicTableCount": 0,
+        "userId": "5d8892b5-641b-9447-61ac-0a42d7324d59",
+        "attemptCountsWriteFormula": 0,
+        "writeFormula": {
+            "writeFormulaH2O": [],
+            "writeFormulaKBr": [],
+            "writeFormulaCaCl2": [],
+            "writeFormulaNaF": [],
+            "writeFormulaNaCl": [],
+            "writeFormulaCH4": [],
+            "writeFormulaCF4": [],
+            "writeFormulaHCl": []
+        },
+        "chooseBond": {
+            "chooseBondCH4": [],
+            "chooseBondNaCl": [],
+            "chooseBondCF4": [],
+            "chooseBondKBr": [],
+            "chooseBondCaCl2": [],
+            "chooseBondHCl": [],
+            "chooseBondH2O": [],
+            "chooseBondNaF": []
+        },
+        "completionCountWriteFormula": 0
+    },
+    {
+        "completionCountChooseBond": 0,
+        "attemptCountsWriteFormulas": {
+            "attemptsWriteFormulaCaCl2": 0,
+            "attemptsWriteFormulaCH4": 0,
+            "attemptsWriteFormulaH2O": 0,
+            "attemptsWriteFormulaNaF": 0,
+            "attemptsWriteFormulaKBr": 0,
+            "attemptsWriteFormulaHCl": 0,
+            "attemptsWriteFormulaNaCl": 0,
+            "attemptsWriteFormulaCF4": 0
+        },
+        "periodicTableCount": 0,
+        "userId": "74ce8a19-1ef6-392f-24a6-fe101799bd82",
+        "attemptCountsWriteFormula": 0,
+        "writeFormula": {
+            "writeFormulaH2O": [],
+            "writeFormulaKBr": [],
+            "writeFormulaCaCl2": [],
+            "writeFormulaNaF": [],
+            "writeFormulaNaCl": [],
+            "writeFormulaCH4": [],
+            "writeFormulaCF4": [],
+            "writeFormulaHCl": []
+        },
+        "chooseBond": {
+            "chooseBondCH4": [],
+            "chooseBondNaCl": [],
+            "chooseBondCF4": [],
+            "chooseBondKBr": [],
+            "chooseBondCaCl2": [],
+            "chooseBondHCl": [],
+            "chooseBondH2O": [],
+            "chooseBondNaF": []
+        },
+        "completionCountWriteFormula": 0
+    },
+    {
+        "completionCountChooseBond": 2,
+        "attemptCountsWriteFormulas": {
+            "attemptsWriteFormulaCaCl2": 0,
+            "attemptsWriteFormulaCH4": 0,
+            "attemptsWriteFormulaH2O": 0,
+            "attemptsWriteFormulaNaF": 0,
+            "attemptsWriteFormulaKBr": 0,
+            "attemptsWriteFormulaHCl": 3,
+            "attemptsWriteFormulaNaCl": 0,
+            "attemptsWriteFormulaCF4": 0
+        },
+        "periodicTableCount": 0,
+        "userId": "93e43743-3c1d-6ec3-b3f2-7feeba8a9ae2",
+        "attemptCountsWriteFormula": 3,
+        "writeFormula": {
+            "writeFormulaH2O": [],
+            "writeFormulaKBr": [],
+            "writeFormulaCaCl2": [],
+            "writeFormulaNaF": [],
+            "writeFormulaNaCl": [],
+            "writeFormulaCH4": [],
+            "writeFormulaCF4": [],
+            "writeFormulaHCl": []
+        },
+        "chooseBond": {
+            "chooseBondCH4": [],
+            "chooseBondNaCl": [],
+            "chooseBondCF4": [],
+            "chooseBondKBr": [],
+            "chooseBondCaCl2": [],
+            "chooseBondHCl": [
+                2,
+                2
+            ],
+            "chooseBondH2O": [],
+            "chooseBondNaF": []
+        },
+        "completionCountWriteFormula": 0
+    },
+    {
+        "completionCountChooseBond": 1,
+        "attemptCountsWriteFormulas": {
+            "attemptsWriteFormulaCaCl2": 0,
+            "attemptsWriteFormulaCH4": 0,
+            "attemptsWriteFormulaH2O": 0,
+            "attemptsWriteFormulaNaF": 0,
+            "attemptsWriteFormulaKBr": 0,
+            "attemptsWriteFormulaHCl": 4,
+            "attemptsWriteFormulaNaCl": 0,
+            "attemptsWriteFormulaCF4": 0
+        },
+        "periodicTableCount": 1,
+        "userId": "dd116a4a-fcec-316c-9e55-f885210a3387",
+        "attemptCountsWriteFormula": 4,
+        "writeFormula": {
+            "writeFormulaH2O": [],
+            "writeFormulaKBr": [],
+            "writeFormulaCaCl2": [],
+            "writeFormulaNaF": [],
+            "writeFormulaNaCl": [],
+            "writeFormulaCH4": [],
+            "writeFormulaCF4": [],
+            "writeFormulaHCl": [
+                81051
+            ]
+        },
+        "chooseBond": {
+            "chooseBondCH4": [],
+            "chooseBondNaCl": [],
+            "chooseBondCF4": [],
+            "chooseBondKBr": [],
+            "chooseBondCaCl2": [],
+            "chooseBondHCl": [
+                109
+            ],
+            "chooseBondH2O": [],
+            "chooseBondNaF": []
+        },
+        "completionCountWriteFormula": 1
+    },
+    {
+        "completionCountChooseBond": 0,
+        "attemptCountsWriteFormulas": {
+            "attemptsWriteFormulaCaCl2": 0,
+            "attemptsWriteFormulaCH4": 0,
+            "attemptsWriteFormulaH2O": 0,
+            "attemptsWriteFormulaNaF": 0,
+            "attemptsWriteFormulaKBr": 0,
+            "attemptsWriteFormulaHCl": 1,
+            "attemptsWriteFormulaNaCl": 0,
+            "attemptsWriteFormulaCF4": 0
+        },
+        "periodicTableCount": 0,
+        "userId": "80ed3a47-9506-68c5-7767-2f19834e0c38",
+        "attemptCountsWriteFormula": 1,
+        "writeFormula": {
+            "writeFormulaH2O": [],
+            "writeFormulaKBr": [],
+            "writeFormulaCaCl2": [],
+            "writeFormulaNaF": [],
+            "writeFormulaNaCl": [],
+            "writeFormulaCH4": [],
+            "writeFormulaCF4": [],
+            "writeFormulaHCl": []
+        },
+        "chooseBond": {
+            "chooseBondCH4": [],
+            "chooseBondNaCl": [],
+            "chooseBondCF4": [],
+            "chooseBondKBr": [],
+            "chooseBondCaCl2": [],
+            "chooseBondHCl": [],
+            "chooseBondH2O": [],
+            "chooseBondNaF": []
+        },
+        "completionCountWriteFormula": 0
+    },
+    {
+        "completionCountChooseBond": 0,
+        "attemptCountsWriteFormulas": {
+            "attemptsWriteFormulaCaCl2": 0,
+            "attemptsWriteFormulaCH4": 0,
+            "attemptsWriteFormulaH2O": 0,
+            "attemptsWriteFormulaNaF": 0,
+            "attemptsWriteFormulaKBr": 0,
+            "attemptsWriteFormulaHCl": 0,
+            "attemptsWriteFormulaNaCl": 0,
+            "attemptsWriteFormulaCF4": 0
+        },
+        "periodicTableCount": 0,
+        "userId": "fd0de0a9-773d-fe83-6ac9-e654453a72f5",
+        "attemptCountsWriteFormula": 0,
+        "writeFormula": {
+            "writeFormulaH2O": [],
+            "writeFormulaKBr": [],
+            "writeFormulaCaCl2": [],
+            "writeFormulaNaF": [],
+            "writeFormulaNaCl": [],
+            "writeFormulaCH4": [],
+            "writeFormulaCF4": [],
+            "writeFormulaHCl": []
+        },
+        "chooseBond": {
+            "chooseBondCH4": [],
+            "chooseBondNaCl": [],
+            "chooseBondCF4": [],
+            "chooseBondKBr": [],
+            "chooseBondCaCl2": [],
+            "chooseBondHCl": [],
+            "chooseBondH2O": [],
+            "chooseBondNaF": []
+        },
+        "completionCountWriteFormula": 0
+    },
+    {
+        "completionCountChooseBond": 0,
+        "attemptCountsWriteFormulas": {
+            "attemptsWriteFormulaCaCl2": 0,
+            "attemptsWriteFormulaCH4": 0,
+            "attemptsWriteFormulaH2O": 0,
+            "attemptsWriteFormulaNaF": 0,
+            "attemptsWriteFormulaKBr": 0,
+            "attemptsWriteFormulaHCl": 0,
+            "attemptsWriteFormulaNaCl": 0,
+            "attemptsWriteFormulaCF4": 0
+        },
+        "periodicTableCount": 0,
+        "userId": "16c6b30d-2a64-2fea-9d35-321795dab625",
+        "attemptCountsWriteFormula": 0,
+        "writeFormula": {
+            "writeFormulaH2O": [],
+            "writeFormulaKBr": [],
+            "writeFormulaCaCl2": [],
+            "writeFormulaNaF": [],
+            "writeFormulaNaCl": [],
+            "writeFormulaCH4": [],
+            "writeFormulaCF4": [],
+            "writeFormulaHCl": []
+        },
+        "chooseBond": {
+            "chooseBondCH4": [],
+            "chooseBondNaCl": [],
+            "chooseBondCF4": [],
+            "chooseBondKBr": [],
+            "chooseBondCaCl2": [],
+            "chooseBondHCl": [],
+            "chooseBondH2O": [],
+            "chooseBondNaF": []
+        },
+        "completionCountWriteFormula": 0
+    },
+    {
+        "completionCountChooseBond": 0,
+        "attemptCountsWriteFormulas": {
+            "attemptsWriteFormulaCaCl2": 0,
+            "attemptsWriteFormulaCH4": 0,
+            "attemptsWriteFormulaH2O": 0,
+            "attemptsWriteFormulaNaF": 0,
+            "attemptsWriteFormulaKBr": 0,
+            "attemptsWriteFormulaHCl": 1,
+            "attemptsWriteFormulaNaCl": 0,
+            "attemptsWriteFormulaCF4": 0
+        },
+        "periodicTableCount": 0,
+        "userId": "866ab78a-7a5c-a0a5-f418-8341240d1702",
+        "attemptCountsWriteFormula": 1,
+        "writeFormula": {
+            "writeFormulaH2O": [],
+            "writeFormulaKBr": [],
+            "writeFormulaCaCl2": [],
+            "writeFormulaNaF": [],
+            "writeFormulaNaCl": [],
+            "writeFormulaCH4": [],
+            "writeFormulaCF4": [],
+            "writeFormulaHCl": []
+        },
+        "chooseBond": {
+            "chooseBondCH4": [],
+            "chooseBondNaCl": [],
+            "chooseBondCF4": [],
+            "chooseBondKBr": [],
+            "chooseBondCaCl2": [],
+            "chooseBondHCl": [],
+            "chooseBondH2O": [],
+            "chooseBondNaF": []
+        },
+        "completionCountWriteFormula": 0
+    }
+]

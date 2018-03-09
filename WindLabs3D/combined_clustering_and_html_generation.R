@@ -16,10 +16,6 @@ windUser <- read_csv("windUser.csv",
                                       results.name = col_character(),
                                       userId = col_character()))
 
-fileName <- 'trainingData.txt'
-TRAINING_DATA <- readChar(fileName, file.info(fileName)$size)
-
-
 #Cluster wind data and generate information for web pages.
 noMissing <- windUser[complete.cases(windUser),]
 #activeData <- noMissing[c("results.correct","results.score","results.over","results.under")]
@@ -134,5 +130,4 @@ outputHTML <- gsub(x = outputHTML, pattern = "CORRECT", replacement = CORRECT, i
 outputHTML <- gsub(x = outputHTML, pattern = "UNDER", replacement = UNDER, ignore.case = FALSE, fixed = TRUE, useBytes = FALSE)
 outputHTML <- gsub(x = outputHTML, pattern = "OVER", replacement = OVER, ignore.case = FALSE, fixed = TRUE, useBytes = FALSE)
 outputHTML <- gsub(x = outputHTML, pattern = "CHART_COLORS", replacement = CHART_COLORS, ignore.case = FALSE, fixed = TRUE, useBytes = FALSE)
-outputHTML <- gsub(x = outputHTML, pattern = "TRAINING_DATA", replacement = TRAINING_DATA, ignore.case = FALSE, fixed = TRUE, useBytes = FALSE)
-write_file(outputHTML, path = "WindDashBoard.html")
+write_file(outputHTML, path = "WindDashboard3D.html")

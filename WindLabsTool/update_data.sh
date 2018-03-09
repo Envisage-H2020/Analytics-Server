@@ -1,7 +1,7 @@
 current_dir=$PWD
 cd /home/ubuntu/WindLabsTool
-python3 update_data.py
-Rscript generate_ann.R
-Rscript combined_clustering_and_html_generation.R
-cp WindDashBoard.html /var/www/envisageanalytics/envisageanalytics/static/dashboardtest/WindDashboard.html
+Rscript training_data_generation.R
+nodejs generate_ann.js
+Rscript html_generation.R
+cp WindDashboardTool.html /var/www/envisageanalytics/envisageanalytics/static/dashboardtest/WindDashboardTool.html
 cd $current_dir

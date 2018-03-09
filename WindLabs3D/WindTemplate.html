@@ -10,9 +10,6 @@
 <!--<script src="../../dist/Chart.bundle.js"></script>-->
 <script src="../dashboardtest/utils.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/synaptic/1.1.4/synaptic.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-
 
 <!--<script src="dashboardtest/bootstrap/dist/js/bootstrap.js"></script>
 <script src="../dashboardtest/bootstrap/dist/css/bootstrap.css"></script>-->
@@ -188,64 +185,6 @@ var pageList = new Array();
 var currentPage = 1;
 var numberPerPage = 10;
 var numberOfPages = 1;   // calculates the total number of pages
-
-var trainingData = [
-    TRAINING_DATA
-];
-
-var input = new synaptic.Layer(trainingData[0]["input"].length); // x inputs
-var output = new synaptic.Layer(4); // Four outputs
-input.project(output); // Connect input to output
-
-
-/* 
-var trainingData = [
-    {input: [1, 0], output: [1, 0, 0]}, // Clap -> Sit
-    {input: [0, 1], output: [0, 1, 0]}, // Whistle -> Run
-    {input: [1, 1], output: [0, 0, 1]}, // Clap+Whistle -> Jump
-];
- */
- 
-
-
-var learningRate = 0.4;
- 
-function train() {
-    for(var i = 0; i < trainingData.length; i++) {
-        input.activate(trainingData[i]["input"]);
-        output.activate();
-        output.propagate(learningRate, trainingData[i]["output"]);
-    }
-}
-
-function retrain() {
-    for(var i = 0; i < 6666; i++) {
-        trainingData = _.shuffle(trainingData);
-        train();
-    }
-}
- 
-retrain(); // Start the training
-
-input.activate(trainingData[3]["input"]); 
-var result = output.activate();
-var sum = result[0] + result[1] + result[2] + result[3];
-
-//convert NaN results to 0
-for (r in result){
-	r = r || 0;
-}
-
-console.log("Input: " + trainingData[3]["input"]);
-console.log("Expected output: " + trainingData[3]["output"]);
-console.log("Sum of outputs: " + sum)
-//output answers, rounded up to 100%
-console.log("Tier 1: " + Math.round(result[0]/sum * 100) + "%");
-console.log("Tier 2: " + Math.round(result[1]/sum * 100) + "%");
-console.log("Tier 3: " + Math.round(result[2]/sum * 100) + "%");
-console.log("Tier 4: " + Math.round(result[3]/sum * 100) + "%");
-
-
 
 
 var pie = document.getElementById("clusterPie").getContext('2d');

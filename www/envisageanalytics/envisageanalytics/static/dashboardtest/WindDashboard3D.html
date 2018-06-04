@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.2.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>-->
+<script src="js/Chart.min.js"></script>
+<!--<script src="../../dist/Chart.bundle.js"></script>-->
+<script src="../dashboardtest/utils.js"></script>
+
+
+<!--<script src="dashboardtest/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../dashboardtest/bootstrap/dist/css/bootstrap.css"></script>-->
+<!--<script src="../dashboardtest/TimeToTaskBar.js"></script>-->
+<link rel="stylesheet" href="../dashboardtest/font-awesome/css/font-awesome.min.css">
+
+<!--<script src="../dashboardtest/node_modules/chart.js/dist/doc/Chart.min.js"></script>-->
+
+  <head>
+    <title>Wind Lab Dashboard</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet"  href="../dashboardtest/chartWrapper.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  </head>
+
+
+
+
+
+  <div class='container-fluid'>
+    <h1 class="text-center text-info" >Wind Lab 3D</h1>
+    <!--Time selector-->
+<!--<input type="text" name="daterange" value="01/01/2015 1:30 PM - 01/01/2015 2:00 PM" />-->
+    <div class='row'>
+      <!--ACTIVE STUDENTS-->
+      <div class='col-md-3'>
+        <div class='card mb-3'>
+        <h6 class="card-header bg-info text-white">Students</h6>
+        <div class='card-body'>
+          <!--<div class="card-body text-center text-info">
+            <h1 class="display-1">10</h1>
+            Number of students active in the lab. <!-- in {time periode}-->
+          <!--</div>-->
+          <div id="numberstudents" class="card-body text-center text-info">
+            <h1 class="display-3">107</h1>
+            out of <strong>107</strong>
+            Students
+          </div>
+        </div>
+        
+        <div style="text-align:center;">
+    		<input type="button" id="first" onclick="firstPage()" value="first" />
+    		<input type="button" id="next" onclick="nextPage()" value="next" />
+    		<input type="button" id="previous" onclick="previousPage()" value="previous" />
+    		<input type="button" id="last" onclick="lastPage()" value="last" />
+		</div>
+		<br/>
+      </div>
+
+      <!--cluster pie-->
+        <div class='card mb-3'>
+        <h6 class="card-header bg-info text-white">Archetypal Clusters</h6>
+
+        <div class='card-body'>
+          <p >
+            <small>
+              The 4 archetypes of all students.
+            </small>
+          </p>
+          <canvas id="clusterPie" height="1" width="1" />
+        </div>
+      </div>
+
+      </div>
+
+
+
+    <!--TABLE WITH TASKS COMPLETED-->
+
+    <div class='col-md-9'>
+      <div class='card mb-3'>
+      <h6 class="card-header bg-info text-white">Tasks completed</h6>
+      <div class='card-body'>
+        <i class="fa fa-check text-success"></i><small> Task complete</small>
+      </div>
+      <table class="table table-sm table-responsive table-bordered table-hover text-center">
+        <!--<caption>List of users</caption>-->
+        <thead>
+          <tr>
+            <th></th>
+            <th>Reached correct power</th>
+            <th>Made Profit</th>
+            <th>Turned turbine on/off</th>
+            <th>Repaired turbine</th>
+            <th>Changed simulation speed</th>
+          </tr>
+        </thead>
+        <tbody id='wind_table'>
+          <tr><td>1</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>2</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>asdasd</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>asdasd</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>5</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>6</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Asfasfsda</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>8</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>wafawf</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>dsagdsag</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>11</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>asdasfd</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>13</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>14</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>dfgsfdhg</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>16</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>17</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>Georgios</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Dtestone</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>Dtestthree</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>St</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Georgios</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Daniel</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>24</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>25</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Angel</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Resi</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Clayton</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>29</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>30</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>31</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>32</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>33</td><td><i class='fa fa-check text-success'></i></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>DFAGF</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>qweasd</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>36</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>d</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>mavidou</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>39</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Kwstas</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Δημκυρ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>42</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>43</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>44</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>45</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>sadf</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>dgsdg</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>48</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>49</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>50</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>dsg</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>Ελεστα</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Αλεμπι</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Ορεζερ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Μακνικ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Μυραρκ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Χριμαυ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Αμομιχ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Γιωαντ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Ειρτσι</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Φιλταρ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Σωτπαπ</td><td><i class='fa fa-check text-success'></i></td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Αγγμιτ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>A</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Κωνκατ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Ακηκρο</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>67</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Νικδομ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Θανσια</td><td><i class='fa fa-check text-success'></i></td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Κατδη</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Σταδημ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Πανγια</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Κακκατ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Χαρσκο</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Μαρλει</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Αλεστα</td><td><i class='fa fa-check text-success'></i></td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Δημχρη</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Γιωκατ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Γιωκας</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Ntastr</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Θοδκατ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>nan</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>nan</td><td><i class='fa fa-check text-success'></i></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>Αγαπετ</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>85</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>Gm</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Παπμυρ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Klemixstakon</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Οικμαρ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Σκοστε</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Μαρελλ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Tουπην</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Σουχρη</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Πετπετ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Δοδαλε</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Tzebag</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Ευα Κατ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Sefnik</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>99</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Πριγια</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Παπνικ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Μαρμυλ</td><td><i class='fa fa-check text-success'></i></td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Βασβελστεμπο</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Κωνβασ</td><td><i class='fa fa-check text-success'></i></td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Αγγρου</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Βασμπο</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Κλονικ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+
+
+	<br>
+
+    <div class='col-md-6'>
+      <div class='card mb-3'>
+      <h6 class="card-header bg-info text-white">Student score</h6>
+
+
+
+      <div class='card-body'>
+        <p >
+          <small>
+            The score the student achieved after completing the game.
+          </small>
+        </p>
+        <canvas id="medianTimeOnTask"></canvas>
+
+      </div>
+
+
+    </div>
+    </div>
+    
+  </div>
+  </div>
+  </div>
+  
+    <!--POWER STATUS-->
+    <div class='col-md-6'>
+      <div class='card mb-3'>
+      <h6 class="card-header bg-info text-white">Power Status</h6>
+
+      <div class='card-body'>
+        <p>
+          <small>
+            The amount of time the students had the wind simulation correctly, under and over powered.
+          </small>
+        </p>
+        <canvas id="powerStatus" height="3" width="4" />
+      </div>
+    </div>
+    </div>
+
+    <!------------------------------>
+
+
+
+    <!------------------------------>
+</div>
+
+<script>
+
+var student_names_list = [' 1','2','asdasd','asdasd','5','6','Asfasfsda','8','wafawf','dsagdsag','11','asdasfd','13','14','dfgsfdhg','16','17','Georgios','Dtestone','Dtestthree','St','Georgios','Daniel','24','25','Angel','Resi','Clayton','29','30','31','32','33','DFAGF','qweasd','36','d','mavidou','39','Kwstas','Δημκυρ','42','43','44','45','sadf','dgsdg','48','49','50','dsg','Ελεστα','Αλεμπι','Ορεζερ','Μακνικ','Μυραρκ','Χριμαυ','Αμομιχ','Γιωαντ','Ειρτσι','Φιλταρ','Σωτπαπ','Αγγμιτ','A','Κωνκατ','Ακηκρο','67','Νικδομ','Θανσια','Κατδη','Σταδημ','Πανγια','Κακκατ','Χαρσκο','Μαρλει','Αλεστα','Δημχρη','Γιωκατ','Γιωκας','Ntastr','Θοδκατ','nan','nan','Αγαπετ','85','Gm','Παπμυρ','Klemixstakon','Οικμαρ','Σκοστε','Μαρελλ','Tουπην','Σουχρη','Πετπετ','Δοδαλε','Tzebag','Ευα Κατ','Sefnik','99','Πριγια','Παπνικ','Μαρμυλ','Βασβελστεμπο','Κωνβασ','Αγγρου','Βασμπο','Κλονικ '];
+var individual_median_list =  [7,8,6,7,7,8,9,8,6,6,6,8,7,10,10,9,10,5,8,10,5,6,7,5,8,6,6,10,10,8,7,7,4,6,5,8,7,9,8,4,4,8,7,7,4,6,8,5,8,7,6,7,7,8,10,5,5,4,9,6,4,4,6,6,4,7,6,8,4,6,6,7,8,8,7,4,7,6,8,8,8,9,5,5,9,3,4,4,6,10,7,8,10,8,7,7,7,7,6,5,3,7,3,4,4,6,7];
+var correct_list =  [19.3,8,0,0,0,0,0,0,0,0,14.3,0,0,0,0,0,0,3.3,8.5,5.5,12,14.1,11.3,0,0,1,8,0,8.6,3.7,17.6,0,0,0,14.9,0,3.9,7.2,5.5,0,6.6,0,20.9,0,4,0,0,28.6,16.7,0,0,2.6,0,3.5,3.3,0,0,7.4,12,6.5,10.5,0,21.6,1.6,13,0,16.6,6.3,0,1,10.3,5,15.7,2.7,19.7,0,0.7,0.7,6.8,5,6.6,12.1,7.1,0,0,0,11.6,6.6,6.6,5,10.6,9,9.3,6.3,4,11,8.3,4,14,0.3,17.3,0,0,6.2,8.8,0,10.3];
+var under_list =  [58,60.1,100,100,100,100,100,100,100,100,85.7,100,100,100,100,100,66.7,90,83.1,78.4,80,71.2,70.4,86.7,81.1,85.4,73.8,81.5,61.5,72.3,58.5,100,100,89,70.1,100,66.4,65.2,61.3,68,76.7,87.4,75.2,86.2,73.3,100,100,71.4,33.3,80.1,87.5,87.8,72,81,83.4,100,66.3,75.2,75.3,43.8,89.5,100,57.8,82.8,53.8,70.1,63.8,70.8,100,73.4,74.1,76.7,57.2,72.2,68.6,100,65.2,74.4,68.4,78.7,66.9,60.7,92.9,100,50,89.2,76.7,76.7,69.1,62.1,73.4,83.4,67.1,76.7,70.1,49.2,63.5,83.4,65.4,63.8,62.5,100,59.8,93.8,78,80.1,84.1];
+var over_list =  [22.7,31.9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33.3,6.6,8.5,16.1,8,14.7,18.3,13.3,18.9,13.6,18.3,18.5,29.9,24,23.9,0,0,11,14.9,0,29.6,27.6,33.1,32,16.6,12.6,4,13.8,22.7,0,0,0,50,19.9,12.5,9.6,28,15.5,13.3,0,33.7,17.4,12.8,49.7,0,0,20.6,15.5,33.2,29.9,19.6,22.9,0,25.6,15.6,18.3,27.1,25.1,11.7,0,34.1,24.9,24.7,16.3,26.5,27.2,0,0,50,10.8,11.6,16.6,24.3,32.9,15.9,7.6,23.6,16.9,25.9,39.9,28.2,12.6,20.6,35.9,20.3,0,40.2,0,13.2,19.9,5.6];
+var wind_tables_list = "<tr><td>1</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>2</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>asdasd</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>asdasd</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>5</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>6</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Asfasfsda</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>8</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>wafawf</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>dsagdsag</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>11</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>asdasfd</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>13</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>14</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>dfgsfdhg</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>16</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>17</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>Georgios</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Dtestone</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>Dtestthree</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>St</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Georgios</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Daniel</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>24</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>25</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Angel</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Resi</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Clayton</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>29</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>30</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>31</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>32</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>33</td><td><i class='fa fa-check text-success'></i></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>DFAGF</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>qweasd</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>36</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>d</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>mavidou</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>39</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Kwstas</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Δημκυρ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>42</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>43</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>44</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>45</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>sadf</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>dgsdg</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>48</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>49</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>50</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>dsg</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>Ελεστα</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Αλεμπι</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Ορεζερ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Μακνικ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Μυραρκ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Χριμαυ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Αμομιχ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Γιωαντ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Ειρτσι</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Φιλταρ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Σωτπαπ</td><td><i class='fa fa-check text-success'></i></td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Αγγμιτ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>A</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Κωνκατ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Ακηκρο</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>67</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Νικδομ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Θανσια</td><td><i class='fa fa-check text-success'></i></td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Κατδη</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Σταδημ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Πανγια</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Κακκατ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Χαρσκο</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Μαρλει</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Αλεστα</td><td><i class='fa fa-check text-success'></i></td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Δημχρη</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Γιωκατ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Γιωκας</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Ntastr</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Θοδκατ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>nan</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>nan</td><td><i class='fa fa-check text-success'></i></td><td></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>Αγαπετ</td><td></td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>85</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td><td></td></tr><tr><td>Gm</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Παπμυρ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Klemixstakon</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Οικμαρ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Σκοστε</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Μαρελλ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Tουπην</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Σουχρη</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Πετπετ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Δοδαλε</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Tzebag</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Ευα Κατ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Sefnik</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>99</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Πριγια</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Παπνικ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Μαρμυλ</td><td><i class='fa fa-check text-success'></i></td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Βασβελστεμπο</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Κωνβασ</td><td><i class='fa fa-check text-success'></i></td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Αγγρου</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr><tr><td>Βασμπο</td><td></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td></tr><tr><td>Κλονικ</td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td><i class='fa fa-check text-success'></i></td><td></td></tr>".split("</tr>");//separate by tr tag
+//re-add string to end of every element in list 
+for (var i=0;i<wind_tables_list.length;i++){
+    wind_tables_list[i]=wind_tables_list[i]+"</tr>";
+}
+
+
+var student_names_pageList = new Array();
+var individual_median_pageList = new Array();
+var correct_pageList =  new Array();
+var under_pageList =  new Array();
+var over_pageList =  new Array();
+var wind_tables_pageList =  new Array();
+
+var currentPage = 1;
+var numberPerPage = 15;
+var numberOfPages = 1;   // calculates the total number of pages
+var begin = 0;
+var end = 0;
+
+function getNumberOfPages() {
+
+    console.log("PAGES: " + Math.ceil(student_names_list.length / numberPerPage));
+    return Math.ceil(student_names_list.length / numberPerPage);
+}
+
+numberOfPages = getNumberOfPages();
+
+
+
+var pie = document.getElementById("clusterPie").getContext('2d');
+var clusterPie = new Chart(pie, {
+      type: 'pie',
+      data: {
+          datasets: [{
+              data: [
+                  36,54,17,0
+              ],
+              backgroundColor: [
+                  window.chartColors.green,
+                  window.chartColors.yellow,
+                  window.chartColors.orange,
+                  window.chartColors.red,
+              ],
+              label: 'Dataset 1'
+          }],
+          labels: [
+              "III: Reflective",
+              "II: Advanced",
+              "I: Beginner",
+              "<I: No problem solver"
+          ]
+      },
+      options: {
+          responsive: true,
+          legend: {
+              position: 'bottom',
+          },
+      }
+  });
+
+//Median time on task chart
+var ctx = document.getElementById("medianTimeOnTask").getContext('2d');
+var timeOnTaskChart = new Chart(ctx, {
+  type: 'bar',
+    data: {
+        labels: [' 1','2','asdasd','asdasd','5','6','Asfasfsda','8','wafawf','dsagdsag','11','asdasfd','13','14','dfgsfdhg','16','17','Georgios','Dtestone','Dtestthree','St','Georgios','Daniel','24','25','Angel','Resi','Clayton','29','30','31','32','33','DFAGF','qweasd','36','d','mavidou','39','Kwstas','Δημκυρ','42','43','44','45','sadf','dgsdg','48','49','50','dsg','Ελεστα','Αλεμπι','Ορεζερ','Μακνικ','Μυραρκ','Χριμαυ','Αμομιχ','Γιωαντ','Ειρτσι','Φιλταρ','Σωτπαπ','Αγγμιτ','A','Κωνκατ','Ακηκρο','67','Νικδομ','Θανσια','Κατδη','Σταδημ','Πανγια','Κακκατ','Χαρσκο','Μαρλει','Αλεστα','Δημχρη','Γιωκατ','Γιωκας','Ntastr','Θοδκατ','nan','nan','Αγαπετ','85','Gm','Παπμυρ','Klemixstakon','Οικμαρ','Σκοστε','Μαρελλ','Tουπην','Σουχρη','Πετπετ','Δοδαλε','Tzebag','Ευα Κατ','Sefnik','99','Πριγια','Παπνικ','Μαρμυλ','Βασβελστεμπο','Κωνβασ','Αγγρου','Βασμπο','Κλονικ '],
+        datasets: [
+          {
+              type: 'line',
+              fill: false,
+              pointRadius: 0,
+              backgroundColor: window.chartColors.white,
+              borderColor: window.chartColors.green,
+              label: 'Class Median',
+              data: [7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7]
+          },{
+            //exbackgroundColor: [window.chartColors.green,window.chartColors.green,window.chartColors.green,window.chartColors.yellow,window.chartColors.orange,window.chartColors.yellow,window.chartColors.yellow,window.chartColors.orange,window.chartColors.yellow,window.chartColors.orange],
+            backgroundColor: [ window.chartColors. yellow , window.chartColors. green , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. green , window.chartColors. green , window.chartColors. green , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. green , window.chartColors. yellow , window.chartColors. green , window.chartColors. green , window.chartColors. green , window.chartColors. green , window.chartColors. yellow , window.chartColors. green , window.chartColors. green , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. green , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. green , window.chartColors. green , window.chartColors. green , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. orange , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. green , window.chartColors. yellow , window.chartColors. green , window.chartColors. green , window.chartColors. orange , window.chartColors. orange , window.chartColors. green , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. orange , window.chartColors. yellow , window.chartColors. green , window.chartColors. yellow , window.chartColors. green , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. green , window.chartColors. green , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. orange , window.chartColors. green , window.chartColors. yellow , window.chartColors. orange , window.chartColors. orange , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. orange , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. green , window.chartColors. orange , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. green , window.chartColors. green , window.chartColors. yellow , window.chartColors. orange , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. green , window.chartColors. green , window.chartColors. green , window.chartColors. green , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. green , window.chartColors. orange , window.chartColors. orange , window.chartColors. orange , window.chartColors. yellow , window.chartColors. green , window.chartColors. yellow , window.chartColors. green , window.chartColors. green , window.chartColors. green , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. orange , window.chartColors. yellow , window.chartColors. orange , window.chartColors. orange , window.chartColors. orange , window.chartColors. yellow , window.chartColors. yellow ,],
+            borderColor: window.chartColors.green,
+            label: ['Game score, colored by cluster'],
+            data: [7,8,6,7,7,8,9,8,6,6,6,8,7,10,10,9,10,5,8,10,5,6,7,5,8,6,6,10,10,8,7,7,4,6,5,8,7,9,8,4,4,8,7,7,4,6,8,5,8,7,6,7,7,8,10,5,5,4,9,6,4,4,6,6,4,7,6,8,4,6,6,7,8,8,7,4,7,6,8,8,8,9,5,5,9,3,4,4,6,10,7,8,10,8,7,7,7,7,6,5,3,7,3,4,4,6,7]
+        }
+        ]
+    },
+    options: {
+      legend: {
+          position: 'bottom',
+      },
+        scales: {
+            yAxes: [{
+              scaleLabel: {
+                                display: true,
+                                labelString: 'Score'
+                            },
+                ticks: {
+                    beginAtZero:true
+                }
+            }],
+            xAxes: [{
+              scaleLabel: {
+                                display: false,
+                                labelString: 'Students'
+                            },
+                ticks: {
+                }
+            }]
+        }
+
+
+    }
+});
+
+
+// power status chart
+
+
+var ctx = document.getElementById("powerStatus").getContext('2d');
+var powerStatus = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+        labels: [' 1','2','asdasd','asdasd','5','6','Asfasfsda','8','wafawf','dsagdsag','11','asdasfd','13','14','dfgsfdhg','16','17','Georgios','Dtestone','Dtestthree','St','Georgios','Daniel','24','25','Angel','Resi','Clayton','29','30','31','32','33','DFAGF','qweasd','36','d','mavidou','39','Kwstas','Δημκυρ','42','43','44','45','sadf','dgsdg','48','49','50','dsg','Ελεστα','Αλεμπι','Ορεζερ','Μακνικ','Μυραρκ','Χριμαυ','Αμομιχ','Γιωαντ','Ειρτσι','Φιλταρ','Σωτπαπ','Αγγμιτ','A','Κωνκατ','Ακηκρο','67','Νικδομ','Θανσια','Κατδη','Σταδημ','Πανγια','Κακκατ','Χαρσκο','Μαρλει','Αλεστα','Δημχρη','Γιωκατ','Γιωκας','Ntastr','Θοδκατ','nan','nan','Αγαπετ','85','Gm','Παπμυρ','Klemixstakon','Οικμαρ','Σκοστε','Μαρελλ','Tουπην','Σουχρη','Πετπετ','Δοδαλε','Tzebag','Ευα Κατ','Sefnik','99','Πριγια','Παπνικ','Μαρμυλ','Βασβελστεμπο','Κωνβασ','Αγγρου','Βασμπο','Κλονικ '],
+        datasets: [{
+            label: 'Correctly powered',
+            data: [19.3,8,0,0,0,0,0,0,0,0,14.3,0,0,0,0,0,0,3.3,8.5,5.5,12,14.1,11.3,0,0,1,8,0,8.6,3.7,17.6,0,0,0,14.9,0,3.9,7.2,5.5,0,6.6,0,20.9,0,4,0,0,28.6,16.7,0,0,2.6,0,3.5,3.3,0,0,7.4,12,6.5,10.5,0,21.6,1.6,13,0,16.6,6.3,0,1,10.3,5,15.7,2.7,19.7,0,0.7,0.7,6.8,5,6.6,12.1,7.1,0,0,0,11.6,6.6,6.6,5,10.6,9,9.3,6.3,4,11,8.3,4,14,0.3,17.3,0,0,6.2,8.8,0,10.3],
+            backgroundColor:
+              window.chartColors.green,
+            borderWidth: 1
+        },
+        {
+            label: 'Under powered',
+            data: [58,60.1,100,100,100,100,100,100,100,100,85.7,100,100,100,100,100,66.7,90,83.1,78.4,80,71.2,70.4,86.7,81.1,85.4,73.8,81.5,61.5,72.3,58.5,100,100,89,70.1,100,66.4,65.2,61.3,68,76.7,87.4,75.2,86.2,73.3,100,100,71.4,33.3,80.1,87.5,87.8,72,81,83.4,100,66.3,75.2,75.3,43.8,89.5,100,57.8,82.8,53.8,70.1,63.8,70.8,100,73.4,74.1,76.7,57.2,72.2,68.6,100,65.2,74.4,68.4,78.7,66.9,60.7,92.9,100,50,89.2,76.7,76.7,69.1,62.1,73.4,83.4,67.1,76.7,70.1,49.2,63.5,83.4,65.4,63.8,62.5,100,59.8,93.8,78,80.1,84.1],
+            backgroundColor:
+              window.chartColors.white,
+            borderWidth: 1
+        },
+        {
+            label: 'Over powered',
+            data: [22.7,31.9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33.3,6.6,8.5,16.1,8,14.7,18.3,13.3,18.9,13.6,18.3,18.5,29.9,24,23.9,0,0,11,14.9,0,29.6,27.6,33.1,32,16.6,12.6,4,13.8,22.7,0,0,0,50,19.9,12.5,9.6,28,15.5,13.3,0,33.7,17.4,12.8,49.7,0,0,20.6,15.5,33.2,29.9,19.6,22.9,0,25.6,15.6,18.3,27.1,25.1,11.7,0,34.1,24.9,24.7,16.3,26.5,27.2,0,0,50,10.8,11.6,16.6,24.3,32.9,15.9,7.6,23.6,16.9,25.9,39.9,28.2,12.6,20.6,35.9,20.3,0,40.2,0,13.2,19.9,5.6],
+            backgroundColor:
+              window.chartColors.grey,
+            borderWidth: 1
+        }]
+    },
+    options: {
+      legend: {
+          position: 'bottom',
+      },
+        scales: {
+            yAxes: [{
+              //barThickness:4,
+
+              stacked: true,
+                ticks: {
+                    beginAtZero:true,
+                },
+                scaleLabel: {
+                                  display: false,
+                                  labelString: 'Students'
+                              }
+            }],
+            xAxes: [{
+              scaleLabel: {
+                                display: true,
+                                labelString: 'Percentage of time spent in simulation'
+                            },
+              stacked: true,
+              ticks: {
+                beginAtZero: true,
+                max: 100
+              }
+        }]
+        }
+
+
+    }
+});
+
+
+
+///-----------------------TEST with scrolable chart----///
+
+
+function generateLabels() {
+  var chartLabels = [];
+  for (x = 0; x < 10; x++) {
+    chartLabels.push("Student" + x);
+  }
+  return chartLabels;
+}
+
+function generateData() {
+  var chartData = [];
+  for (x = 0; x < 10; x++) {
+    chartData.push(Math.floor((Math.random() * 100) + 1));
+  }
+  return chartData;
+}
+function generateMedianData() {
+  var chartData = [];
+  for (x = 0; x < 10; x++) {
+    chartData.push(10);
+  }
+  return chartData;
+}
+
+function addData(numData, chart){
+		for (var i = 0; i < numData; i++){
+    		chart.data.datasets[0].data.push(10);
+        chart.data.datasets[1].data.push(Math.random() * 100);
+    		chart.data.labels.push("Student+" + i);
+    		var newwidth = $('.chartAreaWrapper2').width() + 100;
+    		$('.chartAreaWrapper2').width(newwidth);
+    }
+}
+
+var chartData = {
+  labels: generateLabels(),
+  datasets: [{
+    type:'line',
+    fill: false,
+    pointRadius: 0,
+    backgroundColor: window.chartColors.yellow,
+    borderColor: window.chartColors.yellow,
+    label: "Class Median",
+    data: generateMedianData()
+  },{
+    backgroundColor:
+      window.chartColors.red,
+    label: "Test Data Set",
+    data: generateData()
+  }
+  ]
+};
+
+
+
+$(function() {
+
+  $(window).scroll(function() {
+    if ($('input[name="daterange"]').length) {
+      $('input[name="daterange"]').daterangepicker("close");
+    }
+  });
+});
+
+
+
+function nextPage() {
+    currentPage += 1;
+    loadList();
+}
+
+function previousPage() {
+    currentPage -= 1;
+    loadList();
+}
+
+function firstPage() {
+    currentPage = 1;
+    loadList();
+}
+
+function lastPage() {
+    currentPage = numberOfPages;
+    loadList();
+}
+
+function loadList() {
+    begin = ((currentPage - 1) * numberPerPage);
+    end = begin + numberPerPage;
+	if (end>107) 
+    {
+    	end = 107;
+    }   
+	console.log("Begin: "+begin+", End: "+end);
+	
+    student_names_pageList = student_names_list.slice(begin, end);
+    individual_median_pageList = individual_median_list.slice(begin, end);
+    correct_pageList = correct_list.slice(begin, end);
+	under_pageList = under_list.slice(begin, end);
+	over_pageList = over_list.slice(begin, end);
+	wind_tables_pageList = wind_tables_list.slice(begin, end);
+
+    drawList();
+    check();
+}
+
+var timeOnTaskChart;
+
+function drawList() {
+    document.getElementById("numberstudents").innerHTML = "<h1 class='display-3'>"+ (end - begin) +"</h1> out of <strong>"
+    + 107 + "</strong> Students";
+    
+    document.getElementById("wind_table").innerHTML = wind_tables_pageList.join("");
+    
+    
+    //Median time on task chart
+	var ctx = document.getElementById("medianTimeOnTask").getContext('2d');
+	
+	if (timeOnTaskChart){
+		timeOnTaskChart.destroy();
+	}
+	
+	timeOnTaskChart = new Chart(ctx, {
+	  type: 'bar',
+		data: {
+			labels: student_names_pageList,
+			datasets: [
+			  {
+				  type: 'line',
+				  fill: false,
+				  pointRadius: 0,
+				  backgroundColor: window.chartColors.white,
+				  borderColor: window.chartColors.green,
+				  label: 'Class Median',
+				  data: [7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7]
+			  },{
+				//exbackgroundColor: [window.chartColors.green,window.chartColors.green,window.chartColors.green,window.chartColors.yellow,window.chartColors.orange,window.chartColors.yellow,window.chartColors.yellow,window.chartColors.orange,window.chartColors.yellow,window.chartColors.orange],
+				backgroundColor: [ window.chartColors. yellow , window.chartColors. green , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. green , window.chartColors. green , window.chartColors. green , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. green , window.chartColors. yellow , window.chartColors. green , window.chartColors. green , window.chartColors. green , window.chartColors. green , window.chartColors. yellow , window.chartColors. green , window.chartColors. green , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. green , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. green , window.chartColors. green , window.chartColors. green , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. orange , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. green , window.chartColors. yellow , window.chartColors. green , window.chartColors. green , window.chartColors. orange , window.chartColors. orange , window.chartColors. green , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. orange , window.chartColors. yellow , window.chartColors. green , window.chartColors. yellow , window.chartColors. green , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. green , window.chartColors. green , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. orange , window.chartColors. green , window.chartColors. yellow , window.chartColors. orange , window.chartColors. orange , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. orange , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. green , window.chartColors. orange , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. green , window.chartColors. green , window.chartColors. yellow , window.chartColors. orange , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. green , window.chartColors. green , window.chartColors. green , window.chartColors. green , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. green , window.chartColors. orange , window.chartColors. orange , window.chartColors. orange , window.chartColors. yellow , window.chartColors. green , window.chartColors. yellow , window.chartColors. green , window.chartColors. green , window.chartColors. green , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. yellow , window.chartColors. orange , window.chartColors. yellow , window.chartColors. orange , window.chartColors. orange , window.chartColors. orange , window.chartColors. yellow , window.chartColors. yellow ,],
+				borderColor: window.chartColors.green,
+				label: ['Game score, colored by cluster'],
+				data: individual_median_pageList
+			}
+			]
+		},
+		options: {
+		  legend: {
+			  position: 'bottom',
+		  },
+			scales: {
+				yAxes: [{
+				  scaleLabel: {
+									display: true,
+									labelString: 'Score'
+								},
+					ticks: {
+						beginAtZero:true
+					}
+				}],
+				xAxes: [{
+				  scaleLabel: {
+									display: false,
+									labelString: 'Students'
+								},
+					ticks: {
+					}
+				}]
+			}
+
+
+		}
+	});
+	
+	var ctx = document.getElementById("powerStatus").getContext('2d');
+	
+	if (powerStatus){
+		powerStatus.destroy();
+	}
+	
+	powerStatus = new Chart(ctx, {
+		type: 'horizontalBar',
+		data: {
+			labels: student_names_pageList,
+			datasets: [{
+				label: 'Correctly powered',
+				data: correct_pageList,
+				backgroundColor:
+				  window.chartColors.green,
+				borderWidth: 1
+			},
+			{
+				label: 'Under powered',
+				data: under_pageList,
+				backgroundColor:
+				  window.chartColors.white,
+				borderWidth: 1
+			},
+			{
+				label: 'Over powered',
+				data: over_pageList,
+				backgroundColor:
+				  window.chartColors.grey,
+				borderWidth: 1
+			}]
+		},
+		options: {
+		  legend: {
+			  position: 'bottom',
+		  },
+			scales: {
+				yAxes: [{
+				  //barThickness:4,
+
+				  stacked: true,
+					ticks: {
+						beginAtZero:true,
+					},
+					scaleLabel: {
+									  display: false,
+									  labelString: 'Students'
+								  }
+				}],
+				xAxes: [{
+				  scaleLabel: {
+									display: true,
+									labelString: 'Percentage of time spent in simulation'
+								},
+				  stacked: true,
+				  ticks: {
+					beginAtZero: true,
+					max: 100
+				  }
+			}]
+			}
+
+
+		}
+	});
+}
+
+function check() {
+    document.getElementById("next").disabled = currentPage == numberOfPages ? true : false;
+    document.getElementById("previous").disabled = currentPage == 1 ? true : false;
+    document.getElementById("first").disabled = currentPage == 1 ? true : false;
+    document.getElementById("last").disabled = currentPage == numberOfPages ? true : false;
+}
+
+function load(){
+	loadList();
+}
+
+//on init:
+load();
+
+</script>

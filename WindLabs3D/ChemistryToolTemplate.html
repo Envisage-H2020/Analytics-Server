@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+<!--<script src="../../dist/Chart.bundle.js"></script>-->
+<script src="../dashboardtest/utils.js"></script>
+<!--<script src="../dashboardtest/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../dashboardtest/bootstrap/dist/css/bootstrap.css"></script>-->
+<!--<script src="../dashboardtest/TimeToTaskBar.js"></script>-->
+
+<link rel="stylesheet" href="../dashboardtest/font-awesome/css/font-awesome.min.css">
+
+
+<!--<script src="../dashboardtest/node_modules/chart.js/dist/doc/Chart.min.js"></script>-->
+
+  <head>
+    <title>Chemistry Lab: Bonding Dashboard</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  </head>
+  <body>
+  <div class='container-fluid'>
+      <!--cluster pie-->
+        <div class='card mb-3'>
+        <h6 class="card-header bg-info text-white">Archetypal Clusters</h6>
+
+        <div class='card-body'>
+          <p >
+            <small>
+              The 4 archetypes of in the class.
+            </small>
+          </p>
+          <canvas id="clusterPie" height="1" width="1" />
+        </div>
+      </div>
+
+      </div>
+     </div>
+
+</div>  
+<script>
+
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,    
+    function(m,key,value) {
+      vars[key] = value;
+    });
+    return vars;
+  }
+  
+var getJSON = function(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+      var status = xhr.status;
+      if (status === 200) {
+        callback(null, xhr.response);
+      } else {
+        callback(status, xhr.response);
+      }
+    };
+    xhr.send();
+};
+  
+var settings = getUrlVars()["settings"].split("");
+console.log(settings)
+
+var student_scores = [STUDENT_SCORES];
+
+function calculateScores() {
+    var scores = new Array(student_scores.length);
+    var cluster_counts = [0,0,0,0];
+    
+    for (var i = 0; i<student_scores.length;i++){
+    	//only turn on setting if corresponding binary is 1
+    	scores[i] = 0;
+    	var total = 0;
+    	for (var j = 0; j<student_scores[i].length;j++){  
+    		if (settings[j] == "1"){		
+				if (student_scores[i][j] != -1){
+					total++;
+					scores[i] += student_scores[i][j];
+				}
+    		}	
+    	}
+    	//determine average of student scores
+    	if (total > 0){
+    		scores[i] = scores[i] / total;
+    	}
+    	else scores[i] = -1;
+	}
+	
+	console.log(scores);
+	//convert to cluster membership
+	for (var i = 0; i<scores.length;i++){
+		if (scores[i] < 0){
+			cluster_counts[3]++;
+		}
+		else if (scores[i] < 0.2){
+			cluster_counts[2]++;
+		}
+		else if (scores[i] < 0.5){
+			cluster_counts[1]++;
+		}
+		else cluster_counts[0]++;
+	}
+	
+	console.log(cluster_counts);
+	//redraw pie chart
+	
+	var pie = document.getElementById("clusterPie").getContext('2d');
+	var clusterPie = new Chart(pie, {
+		  type: 'pie',
+		  data: {
+			  datasets: [{
+				  data: cluster_counts,
+				  backgroundColor: [
+					  window.chartColors.green,
+					  window.chartColors.yellow,
+					  window.chartColors.orange,
+					  window.chartColors.red,
+				  ],
+				  label: 'Dataset 1'
+			  }],
+			  labels: [
+				  "III: Reflective",
+				  "II: Advanced",
+				  "I: Beginner",
+				  "<I: No problem solver"
+			  ]
+		  },
+		  options: {
+			  responsive: true,
+			  legend: {
+				  position: 'bottom',
+			  },
+		  }
+	  });
+}
+
+function load(){
+	calculateScores();
+}
+
+//on init:
+load();
+
+
+</script>

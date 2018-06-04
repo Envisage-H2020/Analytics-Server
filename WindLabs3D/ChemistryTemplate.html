@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+<!--<script src="../../dist/Chart.bundle.js"></script>-->
+<script src="../dashboardtest/utils.js"></script>
+<!--<script src="../dashboardtest/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../dashboardtest/bootstrap/dist/css/bootstrap.css"></script>-->
+<!--<script src="../dashboardtest/TimeToTaskBar.js"></script>-->
+
+<link rel="stylesheet" href="../dashboardtest/font-awesome/css/font-awesome.min.css">
+
+
+<!--<script src="../dashboardtest/node_modules/chart.js/dist/doc/Chart.min.js"></script>-->
+
+  <head>
+    <title>Chemistry Lab: Bonding Dashboard</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  </head>
+  <body>
+  <div class='container-fluid'>
+    <h1 class="text-center text-info" >Chemistry Lab: Bonding</h1>
+    <!--Time selector-->
+
+
+    <div class='row'>
+      <!--ACTIVE STUDENTS-->
+      <div class='col-md-3'>
+        <div class='card mb-3'>
+        <h6 class="card-header bg-info text-white">Students</h6>
+        <div class='card-body'>
+          <div id="numberstudents" class="card-body text-center text-info">
+            <h1 class="display-3">NO_STUDENTS_TO_SHOW</h1>
+            out of <strong>TOTAL_STUDENTS</strong>
+            Students
+          </div>
+        </div>
+        <div style="text-align:center;">
+    		<input type="button" id="first" onclick="firstPage()" value="first" />
+    		<input type="button" id="next" onclick="nextPage()" value="next" />
+    		<input type="button" id="previous" onclick="previousPage()" value="previous" />
+    		<input type="button" id="last" onclick="lastPage()" value="last" />
+		</div>
+		<br/>
+      </div>
+
+      <!--cluster pie-->
+        <div class='card mb-3'>
+        <h6 class="card-header bg-info text-white">Archetypal Clusters</h6>
+
+        <div class='card-body'>
+          <p >
+            <small>
+              The 4 archetypes of in the class.
+            </small>
+          </p>
+          <canvas id="clusterPie" height="1" width="1" />
+        </div>
+      </div>
+
+      </div>
+      <!-- Task completion: Write Formula -->
+      
+      <div class='col-md-5'>
+        <div class='card mb-3'>
+          <h6 class="card-header text-white bg-info">Task completion: Write Formula</h6>
+          <div class='card-body'>
+            <i class="fa fa-check text-success"></i><small> Task complete</small>
+            <i class="fa fa-times text-danger"></i><small> Attempted but not completed</small>
+          </div>
+          <table class="table table-responsive table-bordered table-hover text-center">
+          <thead>
+          	<tr>
+          		<th></th>
+				<th>HCL</th>
+				<th>H2O</th>
+				<th>NaF</th>
+				<th>NaCl</th>
+				<th>KBr</th>
+				<th>CH4</th>
+				<th>CaCl2</th>
+				<th>CF4</th>
+          	</tr>
+          </thead>	
+          <tbody id='attempt_table'>
+          	ATTEMPT_TABLES
+          </tbody>
+        </table>
+        </div>
+
+</div>
+
+      <!-- Task completion: Chose Bond -->
+      <div class='col-md-4'>
+        <div class='card mb-3'>
+          <h6 class="card-header text-white bg-info">Task completion: Chose bond</h6>
+          <div class='card-body'>
+            <i class="fa fa-check text-success"></i><small> Correct answer</small>
+            <i class="fa fa-times text-danger"></i><small> Wrong answer</small>
+          </div>
+          <table class="table  table-responsive table-bordered table-hover text-center">
+          <thead>
+          	<tr>
+          		<th></th>
+				<th>HCL</th>
+				<th>H2O</th>
+				<th>NaF</th>
+				<th>NaCl</th>
+				<th>KBr</th>
+				<th>CH4</th>
+				<th>CaCl2</th>
+				<th>CF4</th>
+			</tr>	
+          </thead>
+          <tbody id='choose_table'>
+          	CHOOSE_TABLES
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card-deck col-md-12">
+		<div class='card mb-3'>
+            <div class="card">
+                <h6 class="card-header text-white bg-info">Time on task: Write Formula HCL</h6>
+                <div class='card-body'>
+                	<canvas id='AttemptsWriteFormulaHCl' height="1" width="1"/ >
+                </div>
+            </div>
+        </div>
+        <div class='card mb-3'>
+            <div class="card">
+                <h6 class="card-header text-white bg-info">Time on task: Write Formula H2O</h6>
+                <div class='card-body'>
+                  <canvas id='AttemptsWriteFormulaH2O' height="1" width="1"/ >
+                    <!--<canvas id='AttempsWriteFormula' height="1" width="3"/ >-->
+                </div>
+            </div>
+        </div>  
+        <div class='card mb-3'>
+            <div class="card">
+                <h6 class="card-header text-white bg-info">Time on task: Write Formula NaF</h6>
+                <div class='card-body'>
+                  <canvas id='AttemptsWriteFormulaNaF' height="1" width="1"/ >
+                    <!--<canvas id='AttempsWriteFormula' height="1" width="3"/ >-->
+                </div>
+            </div>
+        </div> 
+        <div class='card mb-3'>
+            <div class="card">
+                <h6 class="card-header text-white bg-info">Time on task: Write Formula CF4</h6>
+                <div class='card-body'>
+                	<canvas id='AttemptsWriteFormulaCF4' height="1" width="1"/ >
+                </div>
+            </div>
+        </div>  
+    </div>
+	<div class="card-deck col-md-12">
+        <div class='card mb-3'>
+            <div class="card">
+                <h6 class="card-header text-white bg-info">Time on task: Write Formula CH4</h6>
+                <div class='card-body'>
+                  <canvas id='AttemptsWriteFormulaCH4' height="1" width="1"/ >
+                </div>
+            </div>
+        </div>  
+        <div class='card mb-3'>
+            <div class="card">
+                <h6 class="card-header text-white bg-info">Time on task: Write Formula CaCl2</h6>
+                <div class='card-body'>
+                  <canvas id='AttemptsWriteFormulaCaCl2' height="1" width="1"/ >
+                </div>
+            </div>
+        </div>   
+        <div class='card mb-3'>
+            <div class="card">
+                <h6 class="card-header text-white bg-info">Time on task: Write Formula KBr</h6>
+                <div class='card-body'>
+                	<canvas id='AttemptsWriteFormulaKBr' height="1" width="1"/ >
+                </div>
+            </div>
+        </div>
+        <div class='card mb-3'>
+            <div class="card">
+                <h6 class="card-header text-white bg-info">Time on task: Write Formula NaCl</h6>
+                <div class='card-body'>
+                  <canvas id='AttemptsWriteFormulaNaCl' height="1" width="1"/ >
+                </div>
+            </div>
+        </div>
+    </div>  
+<script>
+
+
+var student_names_list = [STUDENT_NAMES];
+
+var attempt_tables_list = "ATTEMPT_TABLES".split("</tr>");//separate by tr tag
+//re-add string to end of every element in list 
+for (var i=0;i<attempt_tables_list.length;i++){
+    attempt_tables_list[i]=attempt_tables_list[i]+"</tr>";
+}
+
+var choose_tables_list = "CHOOSE_TABLES".split("</tr>");//separate by tr tag
+//re-add string to end of every element in list 
+for (var i=0;i<choose_tables_list.length;i++){
+    choose_tables_list[i]=choose_tables_list[i]+"</tr>";
+}
+
+var student_scores = [STUDENT_SCORES];
+console.log(student_scores);
+var write_hcl_list = [WRITE_HCL];
+var write_h2o_list = [WRITE_H2O];
+var write_naf_list = [WRITE_NAF];
+var write_cf4_list = [WRITE_CF4];
+var write_ch4_list = [WRITE_CH4];
+var write_cacl2_list = [WRITE_CACL2];
+var write_kbr_list = [WRITE_KBR];
+var write_nacl_list = [WRITE_NACL];
+
+var write_hcl_pageList = new Array();
+var write_h2o_pageList = new Array();
+var write_naf_pageList = new Array();
+var write_cf4_pageList = new Array();
+var write_ch4_pageList = new Array();
+var write_cacl2_pageList = new Array();
+var write_kbr_pageList = new Array();
+var write_nacl_pageList = new Array();
+
+var attempt_tables_pageList =  new Array();
+var choose_tables_pageList =  new Array();
+
+var currentPage = 1;
+var numberPerPage = 15;
+var numberOfPages = 1;   // calculates the total number of pages
+var begin = 0;
+var end = 0;
+
+function getNumberOfPages() {
+	//console.log("PAGES: " + Math.ceil(student_names_list.length / numberPerPage));
+    return Math.ceil(student_names_list.length / numberPerPage);
+}
+
+numberOfPages = getNumberOfPages();
+
+
+/* 
+var pie = document.getElementById("clusterPie").getContext('2d');
+var clusterPie = new Chart(pie, {
+      type: 'pie',
+      data: {
+          datasets: [{
+              data: [
+                  22,
+                  11,
+                  43,
+                  21,
+              ],
+              backgroundColor: [
+                  window.chartColors.green,
+                  window.chartColors.yellow,
+                  window.chartColors.orange,
+                  window.chartColors.red,
+              ],
+              label: 'Dataset 1'
+          }],
+          labels: [
+              "III: Reflective",
+              "II: Advanced",
+              "I: Beginner",
+              "<I: No problem solver"
+          ]
+      },
+      options: {
+          responsive: true,
+          legend: {
+              position: 'bottom',
+          },
+      }
+  });
+ */
+
+
+function nextPage() {
+    currentPage += 1;
+    loadList();
+}
+
+function previousPage() {
+    currentPage -= 1;
+    loadList();
+}
+
+function firstPage() {
+    currentPage = 1;
+    loadList();
+}
+
+function lastPage() {
+    currentPage = numberOfPages;
+    loadList();
+}
+
+function loadList() {
+    begin = ((currentPage - 1) * numberPerPage);
+    end = begin + numberPerPage;
+    if (end>TOTAL_STUDENTS) 
+    {
+    	end = TOTAL_STUDENTS;
+    }
+	
+    student_names_pageList = student_names_list.slice(begin, end);
+    
+	write_hcl_pageList = write_hcl_list.slice(begin, end);
+	write_h2o_pageList = write_h2o_list.slice(begin, end);
+	write_naf_pageList = write_naf_list.slice(begin, end);
+	write_cf4_pageList = write_cf4_list.slice(begin, end);
+	write_ch4_pageList = write_ch4_list.slice(begin, end);
+	write_cacl2_pageList = write_cacl2_list.slice(begin, end);
+	write_kbr_pageList = write_kbr_list.slice(begin, end);
+	write_nacl_pageList = write_nacl_list.slice(begin, end);
+	
+	attempt_tables_pageList = attempt_tables_list.slice(begin, end);
+	choose_tables_pageList = choose_tables_list.slice(begin, end);
+    drawList();
+    check();
+}
+
+var hclChart;
+var h2oChart;
+var nafChart;
+var cf4Chart;
+var ch4Chart;
+var cacl2Chart;
+var kbrChart;
+var naclChart;
+
+function drawList() {
+    document.getElementById("numberstudents").innerHTML = "<h1 class='display-3'>"+ (end - begin) +"</h1> out of <strong>"
+    + TOTAL_STUDENTS + "</strong> Students";
+    
+    document.getElementById("attempt_table").innerHTML = attempt_tables_pageList.join("");
+	document.getElementById("choose_table").innerHTML = choose_tables_pageList.join("");
+    
+    //Median time on task chart
+	var hcl = document.getElementById("AttemptsWriteFormulaHCl").getContext('2d');
+	
+	if (hclChart){
+		hclChart.destroy();
+	}
+	
+	hclChart = new Chart(hcl, {
+	  type: 'bar',
+		data: {
+			labels: student_names_pageList,
+			datasets: [
+			  {
+				backgroundColor: window.chartColors.grey,
+				borderColor: window.chartColors.grey,
+				label: 'Time on Task',
+				data: write_hcl_pageList
+			}
+			]
+		},
+		options: {
+		  legend: {
+			  position: 'bottom',
+		  },
+			scales: {
+				yAxes: [{
+				  scaleLabel: {
+									display: true,
+									labelString: 'Seconds'
+								},
+					 type: 'logarithmic',
+                    ticks: {
+                        min: 0,
+                        max: 10000,
+                        callback: function(value, index, values) {//needed to change the scientific notation results from using logarithmic scale
+                            return Number(value.toString());//pass tick values as a string into Number function
+                        }
+                    },
+				}],
+				xAxes: [{
+				  scaleLabel: {
+									display: false,
+									labelString: 'Students'
+								},
+					ticks: {
+					}
+				}]
+			}
+
+		}
+	});
+	
+	//Median time on task chart
+	var h2o = document.getElementById("AttemptsWriteFormulaH2O").getContext('2d');
+	
+	if (h2oChart){
+		h2oChart.destroy();
+	}
+	
+	h2oChart = new Chart(h2o, {
+	  type: 'bar',
+		data: {
+			labels: student_names_pageList,
+			datasets: [
+			  {
+				backgroundColor: window.chartColors.grey,
+				borderColor: window.chartColors.grey,
+				label: 'Time on Task',
+				data: write_h2o_pageList
+			}
+			]
+		},
+		options: {
+		  legend: {
+			  position: 'bottom',
+		  },
+			scales: {
+				yAxes: [{
+				  scaleLabel: {
+									display: true,
+									labelString: 'Seconds'
+								},
+					 type: 'logarithmic',
+                    ticks: {
+                        min: 0,
+                        max: 10000,
+                        callback: function(value, index, values) {//needed to change the scientific notation results from using logarithmic scale
+                            return Number(value.toString());//pass tick values as a string into Number function
+                        }
+                    },
+				}],
+				xAxes: [{
+				  scaleLabel: {
+									display: false,
+									labelString: 'Students'
+								},
+					ticks: {
+					}
+				}]
+			}
+
+		}
+	});
+	
+	//Median time on task chart
+	var naf = document.getElementById("AttemptsWriteFormulaNaF").getContext('2d');
+	
+	if (nafChart){
+		nafChart.destroy();
+	}
+	
+	nafChart = new Chart(naf, {
+	  type: 'bar',
+		data: {
+			labels: student_names_pageList,
+			datasets: [
+			  {
+				backgroundColor: window.chartColors.grey,
+				borderColor: window.chartColors.grey,
+				label: 'Time on Task',
+				data: write_naf_pageList
+			}
+			]
+		},
+		options: {
+		  legend: {
+			  position: 'bottom',
+		  },
+			scales: {
+				yAxes: [{
+				  scaleLabel: {	  					
+									display: true,			
+									labelString: 'Seconds'
+								},
+					type: 'logarithmic',
+                    ticks: {
+                        min: 0,
+                        max: 10000,
+                        callback: function(value, index, values) {//needed to change the scientific notation results from using logarithmic scale
+                            return Number(value.toString());//pass tick values as a string into Number function
+                        }
+                    },
+				}],
+				xAxes: [{
+				  scaleLabel: {
+									display: false,
+									labelString: 'Students'
+								},
+					ticks: {
+					}
+				}]
+			}
+		}
+	});
+	
+	//Median time on task chart
+	var cf4 = document.getElementById("AttemptsWriteFormulaCF4").getContext('2d');
+	
+	if (cf4Chart){
+		cf4Chart.destroy();
+	}
+	
+	cf4Chart = new Chart(cf4, {
+	  type: 'bar',
+		data: {
+			labels: student_names_pageList,
+			datasets: [
+			  {
+				backgroundColor: window.chartColors.grey,
+				borderColor: window.chartColors.grey,
+				label: 'Time on Task',
+				data: write_cf4_pageList
+			}
+			]
+		},
+		options: {
+		  legend: {
+			  position: 'bottom',
+		  },
+			scales: {
+				yAxes: [{
+				  scaleLabel: {
+									display: true,
+									labelString: 'Seconds'
+								},
+					type: 'logarithmic',
+                    ticks: {
+                        min: 0,
+                        max: 10000,
+                        callback: function(value, index, values) {//needed to change the scientific notation results from using logarithmic scale
+                            return Number(value.toString());//pass tick values as a string into Number function
+                        }
+                    },
+				}],
+				xAxes: [{
+				  scaleLabel: {
+									display: false,
+									labelString: 'Students'
+								},
+					ticks: {
+					}
+				}]
+			}
+
+		}
+	});
+	
+	//Median time on task chart
+	var ch4 = document.getElementById("AttemptsWriteFormulaCH4").getContext('2d');
+	
+	if (ch4Chart){
+		ch4Chart.destroy();
+	}
+	
+	ch4Chart = new Chart(ch4, {
+	  type: 'bar',
+		data: {
+			labels: student_names_pageList,
+			datasets: [
+			  {
+				backgroundColor: window.chartColors.grey,
+				borderColor: window.chartColors.grey,
+				label: 'Time on Task',
+				data: write_ch4_pageList
+			}
+			]
+		},
+		options: {
+		  legend: {
+			  position: 'bottom',
+		  },
+			scales: {
+				yAxes: [{
+				  scaleLabel: {
+									display: true,
+									labelString: 'Seconds'
+								},
+					type: 'logarithmic',
+                    ticks: {
+                        min: 0,
+                        max: 10000,
+                        callback: function(value, index, values) {//needed to change the scientific notation results from using logarithmic scale
+                            return Number(value.toString());//pass tick values as a string into Number function
+                        }
+                    },
+				}],
+				xAxes: [{
+				  scaleLabel: {
+									display: false,
+									labelString: 'Students'
+								},
+					ticks: {
+					}
+				}]
+			}
+
+		}
+	});
+	
+	//Median time on task chart
+	var cacl2 = document.getElementById("AttemptsWriteFormulaCaCl2").getContext('2d');
+	
+	if (cacl2Chart){
+		cacl2Chart.destroy();
+	}
+	
+	cacl2Chart = new Chart(cacl2, {
+	  type: 'bar',
+		data: {
+			labels: student_names_pageList,
+			datasets: [
+			  {
+				backgroundColor: window.chartColors.grey,
+				borderColor: window.chartColors.grey,
+				label: 'Time on Task',
+				data: write_cacl2_pageList
+			}
+			]
+		},
+		options: {
+		  legend: {
+			  position: 'bottom',
+		  },
+			scales: {
+				yAxes: [{
+				  scaleLabel: {
+									display: true,
+									labelString: 'Seconds'
+								},
+					type: 'logarithmic',
+                    ticks: {
+                        min: 0,
+                        max: 10000,
+                        callback: function(value, index, values) {//needed to change the scientific notation results from using logarithmic scale
+                            return Number(value.toString());//pass tick values as a string into Number function
+                        }
+                    },
+				}],
+				xAxes: [{
+				  scaleLabel: {
+									display: false,
+									labelString: 'Students'
+								},
+					ticks: {
+					}
+				}]
+			}
+		}
+	});
+	
+	var kbr = document.getElementById("AttemptsWriteFormulaKBr").getContext('2d');
+	
+	if (kbrChart){
+		kbrChart.destroy();
+	}
+	
+	kbrChart = new Chart(kbr, {
+	  type: 'bar',
+		data: {
+			labels: student_names_pageList,
+			datasets: [
+			  {
+				backgroundColor: window.chartColors.grey,
+				borderColor: window.chartColors.grey,
+				label: 'Time on Task',
+				data: write_kbr_pageList
+			}
+			]
+		},
+		options: {
+		  legend: {
+			  position: 'bottom',
+		  },
+			scales: {
+				yAxes: [{
+				  scaleLabel: {
+									display: true,
+									labelString: 'Seconds'
+								},
+					type: 'logarithmic',
+                    ticks: {
+                        min: 0,
+                        max: 10000,
+                        callback: function(value, index, values) {//needed to change the scientific notation results from using logarithmic scale
+                            return Number(value.toString());//pass tick values as a string into Number function
+                        }
+                    },
+				}],
+				xAxes: [{
+				  scaleLabel: {
+									display: false,
+									labelString: 'Students'
+								},
+					ticks: {
+					}
+				}]
+			}
+
+		}
+	});
+	
+	var nacl = document.getElementById("AttemptsWriteFormulaNaCl").getContext('2d');
+	
+	if (naclChart){
+		naclChart.destroy();
+	}
+	
+	naclChart = new Chart(nacl, {
+	  type: 'bar',
+		data: {
+			labels: student_names_pageList,
+			datasets: [
+			  {
+				backgroundColor: window.chartColors.grey,
+				borderColor: window.chartColors.grey,
+				label: 'Time on Task',
+				data: write_nacl_pageList
+			}
+			]
+		},
+		options: {
+		  legend: {
+			  position: 'bottom',
+		  },
+			scales: {
+				yAxes: [{
+				  scaleLabel: {
+									display: true,
+									labelString: 'Seconds'
+								},
+					type: 'logarithmic',
+                    ticks: {
+                        min: 0,
+                        max: 10000,
+                        callback: function(value, index, values) {//needed to change the scientific notation results from using logarithmic scale
+                            return Number(value.toString());//pass tick values as a string into Number function
+                        }
+                    },
+				}],
+				xAxes: [{
+				  scaleLabel: {
+									display: false,
+									labelString: 'Students'
+								},
+					ticks: {
+					}
+				}]
+			}
+		}
+	});
+}
+
+function check() {
+    document.getElementById("next").disabled = currentPage == numberOfPages ? true : false;
+    document.getElementById("previous").disabled = currentPage == 1 ? true : false;
+    document.getElementById("first").disabled = currentPage == 1 ? true : false;
+    document.getElementById("last").disabled = currentPage == numberOfPages ? true : false;
+}
+
+function calculateScores() {
+    var scores = new Array(student_scores.length);
+    var cluster_counts = [0,0,0,0];
+    
+    for (var i = 0; i<student_scores.length;i++){
+    	scores[i] = 0;
+    	var total = 0;
+    	for (var j = 0; j<student_scores[i].length;j++){  		
+    		if (student_scores[i][j] != -1){
+    			total++;
+    			scores[i] += student_scores[i][j];
+    		}
+    		
+    	}
+    	//determine average of student scores
+    	if (total > 0){
+    		scores[i] = scores[i] / total;
+    	}
+    	else scores[i] = -1;
+	}
+	
+	console.log(scores);
+	//convert to cluster membership
+	for (var i = 0; i<scores.length;i++){
+		if (scores[i] < 0){
+			cluster_counts[3]++;
+		}
+		else if (scores[i] < 0.2){
+			cluster_counts[2]++;
+		}
+		else if (scores[i] < 0.5){
+			cluster_counts[1]++;
+		}
+		else cluster_counts[0]++;
+	}
+	
+	console.log(cluster_counts);
+	//redraw pie chart
+	
+	var pie = document.getElementById("clusterPie").getContext('2d');
+	var clusterPie = new Chart(pie, {
+		  type: 'pie',
+		  data: {
+			  datasets: [{
+				  data: cluster_counts,
+				  backgroundColor: [
+					  window.chartColors.green,
+					  window.chartColors.yellow,
+					  window.chartColors.orange,
+					  window.chartColors.red,
+				  ],
+				  label: 'Dataset 1'
+			  }],
+			  labels: [
+				  "III: Reflective",
+				  "II: Advanced",
+				  "I: Beginner",
+				  "<I: No problem solver"
+			  ]
+		  },
+		  options: {
+			  responsive: true,
+			  legend: {
+				  position: 'bottom',
+			  },
+		  }
+	  });
+}
+
+function load(){
+	calculateScores();
+	loadList();
+}
+
+//on init:
+load();
+
+
+</script>

@@ -1,0 +1,1075 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+<script src="../../dist/Chart.bundle.js"></script>
+<script src="../dashboardtest/utils.js"></script>
+<script src="../dashboardtest/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../dashboardtest/bootstrap/dist/css/bootstrap.css"></script>
+<script src="../dashboardtest/TimeToTaskBar.js"></script>
+
+<link rel="stylesheet" href="../dashboardtest/font-awesome/css/font-awesome.min.css">
+
+
+<!--<script src="../dashboardtest/node_modules/chart.js/dist/doc/Chart.min.js"></script>-->
+
+  <head>
+    <title>Chemistry Dash</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  </head>
+  <body>
+  <div class='container-fluid'>
+    <h1 >Chemistry</h1>
+
+    <div class='card-deck'>
+        <div class='card border-info mb-3'>
+          <!--<h6 class="card-header text-white bg-info"><i class="fa fa-users"></i>  Students</h6>-->
+          <div class="card-body text-center text-info">
+
+            <h1 class="display-1">23</h1>
+            Number of active students
+          </div>
+
+
+        </div>
+        <div class='card border-info mb-3'>
+            <h6 class="card-header text-center text-white bg-info">Task completion: Chose Bond</h6>
+
+            <table class="table table-sm table-responsive table-bordered table-hover text-center">
+            <tr>
+              <th></th>
+              <th>HCL</th>
+              <th>H2O</th>
+              <th>NaF</th>
+              <th>NaCl</th>
+              <th>KBr</th>
+              <th>CH4</th>
+              <th>CaCl2</th>
+              <th>CF4</th>
+            </tr>
+            <tr>
+              <td>Peter</td>
+              <td>✔️</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>✔️</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Maria</td>
+              <td>✔️</td>
+              <td>✔️</td>
+              <td>✔️</td>
+              <td></td>
+              <td></td>
+              <td>✔️</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Lea</td>
+              <td>✔️</td>
+              <td>✔️</td>
+              <td>✔️</td>
+              <td>✔️</td>
+              <td>✔️</td>
+              <td>✔️</td>
+              <td></td>
+              <td>✔️</td>
+            </tr>
+            <tr>
+              <td>Giannis</td>
+              <td>✔️</td>
+              <td></td>
+              <td>✔️</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Mathias</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+
+      </div>
+      <div class='card  mb-3'>
+        <h6 class="card-header text-center text-white bg-info">Power Status</h6>
+        <div class="card-body">
+          <div id="canvas-holder">
+          <canvas id="myStacked"  height="6" width="10"/>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <div class='card-deck'>
+
+
+      <div class='card mb-3'>
+        <h6 class="card-header text-center text-white bg-info">Task completion: Write Formula</h6>
+
+        <table class="table table-responsive table-bordered table-hover text-center">
+        <tr>
+          <th></th>
+          <th>HCL</th>
+          <th>H2O</th>
+          <th>NaF</th>
+          <th>NaCl</th>
+          <th>KBr</th>
+          <th>CH4</th>
+          <th>CaCl2</th>
+          <th>CF4</th>
+        </tr>
+        <tr>
+          <td>Peter</td>
+          <td>✔️</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>✔️</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Maria</td>
+          <td>✔️</td>
+          <td>✔️</td>
+          <td>✔️</td>
+          <td></td>
+          <td></td>
+          <td>✔️</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Lea</td>
+          <td>✔️</td>
+          <td>✔️</td>
+          <td>✔️</td>
+          <td>✔️</td>
+          <td>✔️</td>
+          <td>✔️</td>
+          <td></td>
+          <td>✔️</td>
+        </tr>
+        <tr>
+          <td>Giannis</td>
+          <td>✔️</td>
+          <td></td>
+          <td>✔️</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Mathias</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      </div>
+
+      <div class='card mb-3'>
+        <h6 class="card-header text-white bg-info">Time on Task: Write formula</h6>
+        <div class="card-body">
+            <canvas id="myChart"  height="8" width="10"/>
+        </div>
+      </div>
+
+
+    </div>
+    <!----Task completion: Write Formula-->
+    <div class='card mb-3'>
+      <h6 class="card-header text-center text-white bg-info">Task completion: Write Formula</h6>
+
+      <table class="table  table-responsive table-bordered table-hover text-center">
+      <tr>
+        <th></th>
+        <th>HCL</th>
+        <th>H2O</th>
+        <th>NaF</th>
+        <th>NaCl</th>
+        <th>KBr</th>
+        <th>CH4</th>
+        <th>CaCl2</th>
+        <th>CF4</th>
+      </tr>
+      <tr>
+        <td>Peter</td>
+        <td>✔️</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>✔️</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Maria</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td></td>
+        <td></td>
+        <td>✔️</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Lea</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td>✔️</td>
+        <td></td>
+        <td>✔️</td>
+      </tr>
+      <tr>
+        <td>Giannis</td>
+        <td>✔️</td>
+        <td></td>
+        <td>✔️</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Mathias</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    </div>
+
+
+    <div class='col-md-8'>
+      <div class='card'>
+          <table class="table table-sm table-responsive table-bordered table-hover text-center">
+              <tr>
+                <th></th>
+                <th colspan="8">Write formular</th>
+                <th colspan="8">Chose bond type</th>
+
+              </tr>
+              <tr>
+                <th></th>
+                <th>HCL</th>
+                <th>H2O</th>
+                <th>NaF</th>
+                <th>NaCl</th>
+                <th>KBr</th>
+                <th>CH4</th>
+                <th>CaCl2</th>
+                <th>CF4</th>
+                <th>HCL</th>
+                <th>H2O</th>
+                <th>NaF</th>
+                <th>NaCl</th>
+                <th>KBr</th>
+                <th>CH4</th>
+                <th>CaCl2</th>
+                <th>CF4</th>
+              </tr>
+              <tr>
+                <td>Peter</td>
+                <td>✔️</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>✔️</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>✔️</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>✔️</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Maria</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td></td>
+                <td></td>
+                <td>✔️</td>
+                <td></td>
+                <td></td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td></td>
+                <td></td>
+                <td>✔️</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Lea</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td></td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td></td>
+                <td>✔️</td>
+              </tr>
+              <tr>
+                <td>Giannis</td>
+                <td>✔️</td>
+                <td></td>
+                <td>✔️</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>✔️</td>
+                <td></td>
+                <td>✔️</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Mathias</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>✔️</td>
+                <td></td>
+                <td>✔️</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+
+            </table>
+    </div>
+    </div>
+    <div class='col-md-12'>
+      <div class='card'>
+          <table class=" table table-sm table-responsive table-bordered table-hover text-center">
+                <tr>
+                  <th></th>
+                  <th colspan="2">HCL</th>
+                  <th colspan="2">H2O</th>
+                  <th colspan="2">NaF</th>
+                  <th colspan="2">NaCl</th>
+                  <th colspan="2">KBr</th>
+                  <th colspan="2">CH4</th>
+                  <th colspan="2">CaCl2</th>
+                  <th colspan="2">CF4</th>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th>Write formular</th>
+                  <th>Chose bond type</th>
+                  <th>Write formular</th>
+                  <th>Chose bond type</th>
+                  <th>Write formular</th>
+                  <th>Chose bond type</th>
+                  <th>Write formular</th>
+                  <th>Chose bond type</th>
+                  <th>Write formular</th>
+                  <th>Chose bond type</th>
+                  <th>Write formular</th>
+                  <th>Chose bond type</th>
+                  <th>Write formular</th>
+                  <th>Chose bond type</th>
+                  <th>Write formular</th>
+                  <th>Chose bond type</th>
+                </tr>
+                <tr>
+                  <td>Peter</td>
+                  <td>✔️</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>✔️</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>✔️</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>✔️</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Maria</td>
+                  <td>✔️</td>
+                  <td>✔️</td>
+                  <td>✔️</td>
+                  <td></td>
+                  <td></td>
+                  <td>✔️</td>
+                  <td></td>
+                  <td></td>
+                  <td>✔️</td>
+                  <td>✔️</td>
+                  <td>✔️</td>
+                  <td></td>
+                  <td></td>
+                  <td>✔️</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Lea</td>
+                  <td>✔️</td>
+                  <td>✔️</td>
+                  <td>✔️</td>
+                  <td>✔️</td>
+                  <td>✔️</td>
+                  <td>✔️</td>
+                  <td></td>
+                  <td>✔️</td>
+                  <td>✔️</td>
+                  <td>✔️</td>
+                  <td>✔️</td>
+                  <td>✔️</td>
+                  <td>✔️</td>
+                  <td>✔️</td>
+                  <td></td>
+                  <td>✔️</td>
+                </tr>
+                <tr>
+                  <td>Giannis</td>
+                  <td>✔️</td>
+                  <td></td>
+                  <td>✔️</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>✔️</td>
+                  <td></td>
+                  <td>✔️</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Mathias</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>✔️</td>
+                  <td></td>
+                  <td>✔️</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+              </table>
+    </div>
+    </div>
+    <div class='col-md-5'>
+
+        <div class='card'>
+          <h6 class="card-header text-center text-white bg-info">Time on Task</h6>
+          <div class="card-body">
+            <div id="canvas-holder">
+            <canvas id="chart-area" height="200" width="100"/>
+            </div>
+          </div>
+        </div>
+
+        <div class='card my-3'>
+          <h6 class="card-header text-white bg-info">Time to Completion</h6>
+          <div class="card-body">
+
+          </div>
+          </div>
+        </div>
+
+      <div class='col-md-7'>
+        <div class='card'>
+          <h6 class="card-header text-white bg-info">Tasks completed</h6>
+      <!--    <table class="table table-sm table-responsive table-bordered table-hover text-center">
+            <!--<caption>List of users</caption>-->
+          <!--   <thead>
+              <tr>
+                <th></th>
+                <th>HCL</th>
+                <th>H2O</th>
+                <th>NaF</th>
+                <th>NaCl</th>
+                <th>KBr</th>
+                <th>CH4</th>
+                <th>CaCl2</th>
+                <th>CF4</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Peter</td>
+                <td>✔️</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>✔️</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Maria</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td></td>
+                <td></td>
+                <td>✔️</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Lea</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td></td>
+                <td>✔️</td>
+              </tr>
+              <tr>
+                <td>Giannis</td>
+                <td>✔️</td>
+                <td></td>
+                <td>✔️</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Mathias</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+-->
+         <table class="table table-sm table-responsive table-bordered table-hover text-center">
+             <tr>
+               <th></th>
+               <th colspan="2">HCL</th>
+               <th colspan="2">H2O</th>
+               <th colspan="2">NaF</th>
+               <th colspan="2">NaCl</th>
+               <th colspan="2">KBr</th>
+               <th colspan="2">CH4</th>
+               <th colspan="2">CaCl2</th>
+               <th colspan="2">CF4</th>
+             </tr>
+             <tr>
+               <th></th>
+               <th>Write formular</th>
+               <th>Chose bond type</th>
+               <th>Write formular</th>
+               <th>Chose bond type</th>
+               <th>Write formular</th>
+               <th>Chose bond type</th>
+               <th>Write formular</th>
+               <th>Chose bond type</th>
+               <th>Write formular</th>
+               <th>Chose bond type</th>
+               <th>Write formular</th>
+               <th>Chose bond type</th>
+               <th>Write formular</th>
+               <th>Chose bond type</th>
+               <th>Write formular</th>
+               <th>Chose bond type</th>
+             </tr>
+             <tr>
+               <td>Peter</td>
+               <td>✔️</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>✔️</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>✔️</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>✔️</td>
+               <td></td>
+               <td></td>
+               <td></td>
+             </tr>
+             <tr>
+               <td>Maria</td>
+               <td>✔️</td>
+               <td>✔️</td>
+               <td>✔️</td>
+               <td></td>
+               <td></td>
+               <td>✔️</td>
+               <td></td>
+               <td></td>
+               <td>✔️</td>
+               <td>✔️</td>
+               <td>✔️</td>
+               <td></td>
+               <td></td>
+               <td>✔️</td>
+               <td></td>
+               <td></td>
+             </tr>
+             <tr>
+               <td>Lea</td>
+               <td>✔️</td>
+               <td>✔️</td>
+               <td>✔️</td>
+               <td>✔️</td>
+               <td>✔️</td>
+               <td>✔️</td>
+               <td></td>
+               <td>✔️</td>
+               <td>✔️</td>
+               <td>✔️</td>
+               <td>✔️</td>
+               <td>✔️</td>
+               <td>✔️</td>
+               <td>✔️</td>
+               <td></td>
+               <td>✔️</td>
+             </tr>
+             <tr>
+               <td>Giannis</td>
+               <td>✔️</td>
+               <td></td>
+               <td>✔️</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>✔️</td>
+               <td></td>
+               <td>✔️</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+             </tr>
+             <tr>
+               <td>Mathias</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td>✔️</td>
+               <td></td>
+               <td>✔️</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+             </tr>
+
+           </table>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+<div class='row'>
+  <div class="col-md">
+    <div class='card mb-3'>
+      <h6 class="card-header text-white bg-info">Time to Completion</h6>
+      <div class="card-body">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md">
+    <div class='card mb-3'>
+      <h6 class="card-header text-white bg-info">Time to Completion</h6>
+      <div class="card-body">
+        <p>
+          bjsnbjsfnvjs nsjf nsjfnvsjkf
+        </p>
+        <p>
+          bjsnbjsfnvjs nsjf nsjfnvsjkf
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md">
+    <div class='card mb-3'>
+      <h6 class="card-header text-white bg-info">Time to Completion</h6>
+      <div class="card-body">
+
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
+
+
+</div>
+
+  </body>
+</html>
+
+<!--
+<script>
+
+
+var randomScalingFactor = function() {
+    return Math.round(Math.random() * 100);
+};
+
+var config = {
+    type: 'horizontalBar',
+    data: {
+        datasets: [{
+            data: [
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+            ],
+            backgroundColor: [
+                window.chartColors.red,
+                window.chartColors.red,
+                window.chartColors.red,
+                window.chartColors.red,
+                window.chartColors.red,
+            ],
+            label: 'Time on task'
+        }],
+        labels: [
+            "Peter",
+            "Maria",
+            "Lea",
+            "Giannis",
+            "Mathias"
+        ]
+    },
+    options: {
+        responsive: true,
+        legend: {
+           display: false,
+            position: 'right',
+        },
+        title: {
+            display: false,
+            text: 'Chart.js Doughnut Chart'
+        },
+        animation: {
+            animateScale: true,
+            animateRotate: true
+        }
+    }
+};
+
+window.onload = function() {
+    var ctx = document.getElementById("chart-area").getContext("2d");
+    window.myDoughnut = new Chart(ctx, config);
+};
+
+document.getElementById('randomizeData').addEventListener('click', function() {
+    config.data.datasets.forEach(function(dataset) {
+        dataset.data = dataset.data.map(function() {
+            return randomScalingFactor();
+        });
+    });
+
+    window.myDoughnut.update();
+});
+
+var colorNames = Object.keys(window.chartColors);
+document.getElementById('addDataset').addEventListener('click', function() {
+    var newDataset = {
+        backgroundColor: [],
+        data: [],
+        label: 'New dataset ' + config.data.datasets.length,
+    };
+
+    for (var index = 0; index < config.data.labels.length; ++index) {
+        newDataset.data.push(randomScalingFactor());
+
+        var colorName = colorNames[index % colorNames.length];;
+        var newColor = window.chartColors[colorName];
+        newDataset.backgroundColor.push(newColor);
+    }
+
+    config.data.datasets.push(newDataset);
+    window.myDoughnut.update();
+});
+
+document.getElementById('addData').addEventListener('click', function() {
+    if (config.data.datasets.length > 0) {
+        config.data.labels.push('data #' + config.data.labels.length);
+
+        var colorName = colorNames[config.data.datasets[0].data.length % colorNames.length];;
+        var newColor = window.chartColors[colorName];
+
+        config.data.datasets.forEach(function(dataset) {
+            dataset.data.push(randomScalingFactor());
+            dataset.backgroundColor.push(newColor);
+        });
+
+        window.myDoughnut.update();
+    }
+});
+
+
+
+document.getElementById('removeData').addEventListener('click', function() {
+    config.data.labels.splice(-1, 1); // remove the label first
+
+    config.data.datasets.forEach(function(dataset) {
+        dataset.data.pop();
+        dataset.backgroundColor.pop();
+    });
+
+    window.myDoughnut.update();
+});
+
+
+</script>-->
+
+
+<script>
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+        labels: ["Peter","Maria","Lea","Giannis","Mathias"],
+        datasets: [{
+            label: 'HCl',
+            data: [16, 0, 3, 0, 22],
+            backgroundColor:
+              window.chartColors.red,
+            borderWidth: 1
+        },
+        {
+            label: 'H2O',
+            data: [1, 9, 3, 5, 8],
+            backgroundColor:
+              window.chartColors.orange,
+            borderWidth: 1
+        },
+        {
+            label: 'NaF',
+            data: [10, 9, 6, 7, 4],
+            backgroundColor:
+              window.chartColors.yellow,
+            borderWidth: 1
+        },
+        {
+            label: 'NaCl',
+            data: [18, 25, 10, 4, 6],
+            backgroundColor:
+              window.chartColors.green,
+            borderWidth: 1
+        },
+        {
+            label: 'KBr',
+            data: [12, 13, 3, 8, 9],
+            backgroundColor:
+              window.chartColors.cyan,
+            borderWidth: 1
+        },
+        {
+            label: 'CH4',
+            data: [15, 1, 13, 5, 1],
+            backgroundColor:
+              window.chartColors.blue,
+            borderWidth: 1
+        },
+        {
+            label: 'CaCl2',
+            data: [12, 19, 1, 5, 2],
+            backgroundColor:
+              window.chartColors.purple,
+            borderWidth: 1
+        },
+        {
+            label: 'CF4',
+            data: [0, 13, 13, 15, 12],
+            backgroundColor:
+              window.chartColors.pink,
+            borderWidth: 1
+        }]
+    },
+    options: {
+      legend: {
+          position: 'right',
+      },
+        scales: {
+            yAxes: [{
+              //barThickness:4,
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+
+
+    }
+});
+
+
+var ctx = document.getElementById("myStacked").getContext('2d');
+var myStacked = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+        labels: ["Peter","Maria","Lea","Giannis","Mathias"],
+        datasets: [{
+            label: 'Correctly powered',
+            data: [10, 0, 60, 40, 55],
+            backgroundColor:
+              window.chartColors.green,
+            borderWidth: 1
+        },
+        {
+            label: 'Under powered',
+            data: [20, 40, 10, 30, 15],
+            backgroundColor:
+              window.chartColors.white,
+            borderWidth: 1
+        },
+        {
+            label: 'Over powered',
+            data: [70, 60, 30, 30, 30],
+            backgroundColor:
+              window.chartColors.grey,
+            borderWidth: 1
+        }]
+    },
+    options: {
+      legend: {
+          position: 'bottom',
+      },
+        scales: {
+            yAxes: [{
+              //barThickness:4,
+              stacked: true,
+                ticks: {
+                    beginAtZero:true
+                }
+            }],
+            xAxes: [{
+        stacked: true
+        }]
+        }
+
+
+    }
+});
+
+
+</script>

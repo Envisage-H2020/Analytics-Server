@@ -9,20 +9,32 @@ def root():
     getParams = request.args
     app.logger.info('Got parameters from GET', getParams)
     print('Got parameters from GET', getParams)
-    outputAddress = 'dashboardtest/WindDashboard.html'
+    outputAddress = 'dashboardtest/WindDashboard3D.html'
     if 'lab' in getParams:
         labType = getParams['lab']
         if labType == 'energy':
             outputAddress = 'dashboardtest/WindDashboard.html'
+        if labType == 'energy3d':
+            outputAddress = 'dashboardtest/WindDashboard3D.html'
+        if labType == 'energytool':
+            outputAddress = 'dashboardtest/WindDashboardTool.html'
         if labType == 'chemistry':
             outputAddress = 'dashboardtest/ChemistryDashboard.html'
+        if labType == 'chemistry3d':
+            outputAddress = 'dashboardtest/ChemistryDashboard.html'
+        if labType == 'chemistrytool':
+            outputAddress = 'dashboardtest/ChemistryToolDashboard.html'  
         if labType == 'taskgenerator':
             outputAddress = 'dashboardtest/task_generator.html'
     if 'game_type' in getParams:
         game_type = getParams['game_type']
         if game_type == 'energy':
+            outputAddress = 'dashboardtest/WindDashboard3D.html'
+        if game_type == '2denergy':
             outputAddress = 'dashboardtest/WindDashboard.html'
         if game_type == 'chemistry':
+            outputAddress = 'dashboardtest/ChemistryDashboard.html'
+        if game_type == 'chemistry3d':
             outputAddress = 'dashboardtest/ChemistryDashboard.html'
         if game_type == 'taskgenerator':
             outputAddress = 'dashboardtest/task_generator.html'

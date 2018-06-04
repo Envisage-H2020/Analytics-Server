@@ -1,0 +1,48 @@
+/*.chartWrapper {
+    position: relative;
+}
+
+.chartWrapper > canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events:none;
+}
+
+.chartAreaWrapper {
+    color: red;
+    width: 400px;
+    overflow-x: scroll;
+}*/
+.chartWrapper {
+    position: relative;
+}
+
+.chartWrapper > canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events:none;
+}
+.chartAreaWrapper {
+  overflow-x: scroll;
+    position: relative;
+    /*width: 600px;*/
+}
+
+.chartAreaWrapper2 {
+    position: relative;
+    height: 100%;
+}
+
+.chartAreaWrapperHoriz {
+  color: red;
+  overflow-y: scroll;
+    position: relative;
+    /*width: 600px;*/
+}
+
+.chartAreaWrapper2Horiz {
+    position: relative;
+    width: 100%;
+}

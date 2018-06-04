@@ -20,8 +20,8 @@ kMeansFit <- kmeans(activeData, 4)
 #unique id is called userId
 
 # Prepare the tables for display in HTML
-noStudentsToShow <- 10
 totalStudents <- nrow(noMissing)
+noStudentsToShow <- totalStudents
 
 displayed <- noMissing
 displayed <- displayed[sample(nrow(displayed), size = noStudentsToShow, replace = FALSE),]
@@ -38,6 +38,7 @@ one <- length(which(displayClusters == 1))
 two <- length(which(displayClusters == 2))
 three <- length(which(displayClusters == 3))
 four <- length(which(displayClusters == 4))
+
 
 transposed = data.frame()
 transposed = rbind(transposed, displayed$correctPower)
@@ -64,6 +65,9 @@ color_output <- gsub("1","green", color_output)
 color_output <- gsub("2","yellow", color_output)
 color_output <- gsub("3","orange", color_output)
 color_output <- gsub("4","red", color_output)
+
+STUDENT_NAMES <- paste("'",paste(as.character(chosenNames), collapse = "','"),"'")
+
 
 # Prepare summary data for HTML
 NO_STUDENTS_TO_SHOW <- noStudentsToShow
@@ -92,4 +96,4 @@ outputHTML <- gsub(x = outputHTML, pattern = "CORRECT", replacement = CORRECT, i
 outputHTML <- gsub(x = outputHTML, pattern = "UNDER", replacement = UNDER, ignore.case = FALSE, fixed = TRUE, useBytes = FALSE)
 outputHTML <- gsub(x = outputHTML, pattern = "OVER", replacement = OVER, ignore.case = FALSE, fixed = TRUE, useBytes = FALSE)
 outputHTML <- gsub(x = outputHTML, pattern = "CHART_COLORS", replacement = CHART_COLORS, ignore.case = FALSE, fixed = TRUE, useBytes = FALSE)
-write_file(outputHTML, path = "WindDashBoard.html")
+write_file(outputHTML, path = "WindDashboard.html")

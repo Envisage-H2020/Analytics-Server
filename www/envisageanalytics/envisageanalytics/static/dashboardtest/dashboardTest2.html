@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+<script src="../../dist/Chart.bundle.js"></script>
+<script src="../dashboardtest/utils.js"></script>
+<script src="../dashboardtest/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../dashboardtest/bootstrap/dist/css/bootstrap.css"></script>
+
+<link rel="stylesheet" href="../dashboardtest/font-awesome/css/font-awesome.min.css">
+
+
+<script src="js/Chart.min.js"></script>
+
+  <head>
+    <title>Dashboard 2</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  </head>
+  <body>
+  <div class='container-fluid'>
+    <h4 >Wind Farm Simulation 2</h4>
+    <div class='card-deck'>
+        <div class='card border-info mb-3'>
+          <!--<h6 class="card-header text-white bg-info"><i class="fa fa-users"></i>  Students</h6>-->
+          <div class="card-body text-center text-info">
+
+            <h1 class="display-1">23</h1>
+            Number of active students
+          </div>
+        </div>
+
+
+        <div class='card mb-3'>
+          <h6 class="card-header text-white bg-info"></h6>
+          <div class="card-body">
+
+          </div>
+        </div>
+
+        <div class='card mb-3'>
+          <h6 class="card-header text-white bg-info"></h6>
+          <div class="card-body">
+
+          </div>
+        </div>
+    </div>
+
+
+    <div class='row'>
+
+      <div class='col-md-5'>
+
+        <div class='card'>
+          <h6 class="card-header text-center text-white bg-info">Median Time on Task</h6>
+          <div class="card-body">
+            <div id="canvas-holder">
+            <canvas id="chart-area" />
+          </div>
+          </div>
+        </div>
+
+        <div class='card my-3'>
+          <h6 class="card-header text-white bg-info">Time to Completion</h6>
+          <div class="card-body">
+
+          </div>
+          </div>
+        </div>
+
+      <div class='col-md-7'>
+        <div class='card'>
+          <h6 class="card-header text-white bg-info">Tasks completed</h6>
+          <table class="table table-sm table-responsive table-bordered table-hover text-center">
+            <!--<caption>List of users</caption>-->
+            <thead>
+              <tr>
+                <th></th>
+                <th>Reached correct power</th>
+                <th>Added turbine</th>
+                <th>Turned turbine on/off</th>
+                <th>Repaired turbine</th>
+                <th>Changed wind speed</th>
+                <th>Changed power requirements</th>
+                <th>Changed simulation speed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Peter</td>
+                <td>✔️</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>✔️</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Maria</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td></td>
+                <td></td>
+                <td>✔️</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Lea</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+              </tr>
+              <tr>
+                <td>Giannis</td>
+                <td>✔️</td>
+                <td></td>
+                <td>✔️</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Mathias</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+</div>
+<!--
+<div class='row'>
+  <div class="col-md">
+    <div class='card mb-3'>
+      <h6 class="card-header text-white bg-info">Time to Completion</h6>
+      <div class="card-body">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md">
+    <div class='card mb-3'>
+      <h6 class="card-header text-white bg-info">Time to Completion</h6>
+      <div class="card-body">
+        <p>
+          bjsnbjsfnvjs nsjf nsjfnvsjkf
+        </p>
+        <p>
+          bjsnbjsfnvjs nsjf nsjfnvsjkf
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md">
+    <div class='card mb-3'>
+      <h6 class="card-header text-white bg-info">Time to Completion</h6>
+      <div class="card-body">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+-->
+
+
+</div>
+
+  </body>
+</html>
+
+
+<script>
+
+
+var randomScalingFactor = function() {
+    return Math.round(Math.random() * 100);
+};
+
+var config = {
+    type: 'horizontalBar',
+    data: {
+        datasets: [{
+            data: [
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+            ],
+            backgroundColor: [
+                window.chartColors.red,
+                window.chartColors.red,
+                window.chartColors.red,
+                window.chartColors.red,
+                window.chartColors.red,
+            ],
+            label: 'Time on task'
+        }],
+        labels: [
+            "Peter",
+            "Maria",
+            "Lea",
+            "Giannis",
+            "Mathias"
+        ]
+    },
+    options: {
+        responsive: true,
+        legend: {
+           display: false,
+            position: 'right',
+        },
+        title: {
+            display: false,
+            text: 'Chart.js Doughnut Chart'
+        },
+        animation: {
+            animateScale: true,
+            animateRotate: true
+        }
+    }
+};
+
+window.onload = function() {
+    var ctx = document.getElementById("chart-area").getContext("2d");
+    window.myDoughnut = new Chart(ctx, config);
+};
+
+document.getElementById('randomizeData').addEventListener('click', function() {
+    config.data.datasets.forEach(function(dataset) {
+        dataset.data = dataset.data.map(function() {
+            return randomScalingFactor();
+        });
+    });
+
+    window.myDoughnut.update();
+});
+
+var colorNames = Object.keys(window.chartColors);
+document.getElementById('addDataset').addEventListener('click', function() {
+    var newDataset = {
+        backgroundColor: [],
+        data: [],
+        label: 'New dataset ' + config.data.datasets.length,
+    };
+
+    for (var index = 0; index < config.data.labels.length; ++index) {
+        newDataset.data.push(randomScalingFactor());
+
+        var colorName = colorNames[index % colorNames.length];;
+        var newColor = window.chartColors[colorName];
+        newDataset.backgroundColor.push(newColor);
+    }
+
+    config.data.datasets.push(newDataset);
+    window.myDoughnut.update();
+});
+
+document.getElementById('addData').addEventListener('click', function() {
+    if (config.data.datasets.length > 0) {
+        config.data.labels.push('data #' + config.data.labels.length);
+
+        var colorName = colorNames[config.data.datasets[0].data.length % colorNames.length];;
+        var newColor = window.chartColors[colorName];
+
+        config.data.datasets.forEach(function(dataset) {
+            dataset.data.push(randomScalingFactor());
+            dataset.backgroundColor.push(newColor);
+        });
+
+        window.myDoughnut.update();
+    }
+});
+
+
+
+document.getElementById('removeData').addEventListener('click', function() {
+    config.data.labels.splice(-1, 1); // remove the label first
+
+    config.data.datasets.forEach(function(dataset) {
+        dataset.data.pop();
+        dataset.backgroundColor.pop();
+    });
+
+    window.myDoughnut.update();
+});
+
+
+</script>

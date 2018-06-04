@@ -109,7 +109,7 @@ TOTAL_STUDENTS <- totalStudents
 STUDENT_NAMES <- paste("'",paste(as.character(chosenNames), collapse = "','"),"'")
 WIND_TABLES <- paste(output, collapse = "")
 CLUSTER_COUNTS <- paste(as.character(one),as.character(two),as.character(three),as.character(four),sep = ",")
-COMMON_MEDIAN <- paste(as.character(rep(median(noMissing$results.medianTimeOnTask), nrow(displayed))), collapse = ",")
+COMMON_MEDIAN <- paste(as.character(rep(median(displayed$results.score), nrow(displayed))), collapse = ",")
 INDIVIDUAL_MEDIAN <- paste(as.character(round(displayed$results.score,0)), collapse=",")
 CORRECT <- paste(as.character(round(displayed$results.correct,digits=1)), collapse=",")
 UNDER <- paste(as.character(round(displayed$results.under,digits=1)), collapse=",")

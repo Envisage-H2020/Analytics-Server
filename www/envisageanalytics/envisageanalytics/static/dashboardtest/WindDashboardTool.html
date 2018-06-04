@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.2.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>-->
+<script src="js/Chart.min.js"></script>
+<!--<script src="../../dist/Chart.bundle.js"></script>-->
+<script src="../dashboardtest/utils.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/synaptic/1.1.4/synaptic.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+
+<!--<script src="dashboardtest/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../dashboardtest/bootstrap/dist/css/bootstrap.css"></script>-->
+<!--<script src="../dashboardtest/TimeToTaskBar.js"></script>-->
+<link rel="stylesheet" href="../dashboardtest/font-awesome/css/font-awesome.min.css">
+
+<!--<script src="../dashboardtest/node_modules/chart.js/dist/doc/Chart.min.js"></script>-->
+
+  <head>
+    <title>Wind Lab Dashboard</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet"  href="../dashboardtest/chartWrapper.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+
+
+
+<div class='col-md-9'>
+     <!--cluster pie-->
+    <div class='card mb-3'>
+        <h6 class="card-header bg-info text-white">Archetypal Clusters</h6>
+
+        <div class='card-body'>
+          <p >
+            <small>
+              The 4 archetypes of all students.
+            </small>
+          </p>
+          <canvas id="clusterPie" height="1" width="1" />
+        </div>
+      </div>
+    </div>
+
+</div>
+
+<script>
+
+const Layer = synaptic.Layer;
+const Network = synaptic.Network;
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,    
+    function(m,key,value) {
+      vars[key] = value;
+    });
+    return vars;
+  }
+  
+var getJSON = function(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+      var status = xhr.status;
+      if (status === 200) {
+        callback(null, xhr.response);
+      } else {
+        callback(status, xhr.response);
+      }
+    };
+    xhr.send();
+};
+  
+var environment = getUrlVars()["env"];
+var map = getUrlVars()["map"];
+
+var watts = getUrlVars()["watts"];
+var area = getUrlVars()["area"];
+var cost = getUrlVars()["cost"];
+
+var environment_options = {'fields' : '0,0,0,0,1',
+                         'seashore' : '0,0,0,1,0',
+                        'mountains' : '0,0,1,0,0'
+    }
+    
+var map_options = {'1' : '0,0,0,0,0,0,0,0,0,1',
+                   '2' : '0,0,0,0,0,0,0,0,1,0',
+                   '3' : '0,0,0,0,0,0,0,1,0,0',
+                   '4' : '0,0,0,0,0,0,1,0,0,0',
+                   '5' : '0,0,0,0,0,1,0,0,0,0',
+                   '6' : '0,0,0,0,1,0,0,0,0,0',
+                   '7' : '0,0,0,1,0,0,0,0,0,0',
+                   '8' : '0,0,1,0,0,0,0,0,0,0',
+    }
+    
+//turbine options take the form of '0,0,1,1,1'; first two are always 0 0, followed by watts, area and cost 
+
+//normalise variables
+var norm_watts = (watts-0.85)/(6.0-0.85);
+var norm_area = (area-52.0)/(128.0-52.0);
+var norm_cost = (cost-1.0)/4.0;
+
+var turbine = "0,0,"+norm_watts+","+norm_area+","+norm_cost;
+var parameters = environment_options[environment] +","+ map_options[map] +","+ turbine;
+parameters = parameters.split(",");
+console.log(parameters);
+
+//import neural network
+var myNetwork = Network.fromJSON({"neurons":[{"trace":{"elegibility":{},"extended":{}},"state":0,"old":0,"activation":0,"bias":0,"layer":"input","squash":"LOGISTIC"},{"trace":{"elegibility":{},"extended":{}},"state":0,"old":0,"activation":0,"bias":0,"layer":"input","squash":"LOGISTIC"},{"trace":{"elegibility":{},"extended":{}},"state":0,"old":0,"activation":0,"bias":0,"layer":"input","squash":"LOGISTIC"},{"trace":{"elegibility":{},"extended":{}},"state":0,"old":0,"activation":1,"bias":0,"layer":"input","squash":"LOGISTIC"},{"trace":{"elegibility":{},"extended":{}},"state":0,"old":0,"activation":0,"bias":0,"layer":"input","squash":"LOGISTIC"},{"trace":{"elegibility":{},"extended":{}},"state":0,"old":0,"activation":0,"bias":0,"layer":"input","squash":"LOGISTIC"},{"trace":{"elegibility":{},"extended":{}},"state":0,"old":0,"activation":0,"bias":0,"layer":"input","squash":"LOGISTIC"},{"trace":{"elegibility":{},"extended":{}},"state":0,"old":0,"activation":0,"bias":0,"layer":"input","squash":"LOGISTIC"},{"trace":{"elegibility":{},"extended":{}},"state":0,"old":0,"activation":0,"bias":0,"layer":"input","squash":"LOGISTIC"},{"trace":{"elegibility":{},"extended":{}},"state":0,"old":0,"activation":0,"bias":0,"layer":"input","squash":"LOGISTIC"},{"trace":{"elegibility":{},"extended":{}},"state":0,"old":0,"activation":0,"bias":0,"layer":"input","squash":"LOGISTIC"},{"trace":{"elegibility":{},"extended":{}},"state":0,"old":0,"activation":0,"bias":0,"layer":"input","squash":"LOGISTIC"},{"trace":{"elegibility":{},"extended":{}},"state":0,"old":0,"activation":0,"bias":0,"layer":"input","squash":"LOGISTIC"},{"trace":{"elegibility":{},"extended":{}},"state":0,"old":0,"activation":0,"bias":0,"layer":"input","squash":"LOGISTIC"},{"trace":{"elegibility":{},"extended":{}},"state":0,"old":0,"activation":1,"bias":0,"layer":"input","squash":"LOGISTIC"},{"trace":{"elegibility":{},"extended":{}},"state":0,"old":0,"activation":0,"bias":0,"layer":"input","squash":"LOGISTIC"},{"trace":{"elegibility":{},"extended":{}},"state":0,"old":0,"activation":0,"bias":0,"layer":"input","squash":"LOGISTIC"},{"trace":{"elegibility":{},"extended":{}},"state":0,"old":0,"activation":0.41747572815534,"bias":0,"layer":"input","squash":"LOGISTIC"},{"trace":{"elegibility":{},"extended":{}},"state":0,"old":0,"activation":0.973684210526316,"bias":0,"layer":"input","squash":"LOGISTIC"},{"trace":{"elegibility":{},"extended":{}},"state":0,"old":0,"activation":0.75,"bias":0,"layer":"input","squash":"LOGISTIC"},{"trace":{"elegibility":{},"extended":{}},"state":-0.4064996342173153,"old":-1.8899114397182366,"activation":0.39975173943914855,"bias":-2.6171370137362193,"layer":"output","squash":"LOGISTIC"},{"trace":{"elegibility":{},"extended":{}},"state":-0.46798261260808616,"old":0.7989928789338179,"activation":0.3850938431594709,"bias":2.56427452850828,"layer":"output","squash":"LOGISTIC"},{"trace":{"elegibility":{},"extended":{}},"state":-2.4352006439827427,"old":-3.622403672029928,"activation":0.08052755561074318,"bias":-4.397777951247046,"layer":"output","squash":"LOGISTIC"},{"trace":{"elegibility":{},"extended":{}},"state":-48.20293303957646,"old":-12.768298427807395,"activation":1.1634083309091715e-21,"bias":-8.481411091379414,"layer":"output","squash":"LOGISTIC"}],"connections":[{"from":0,"to":20,"weight":-0.009524435410276061,"gater":null},{"from":0,"to":21,"weight":-0.0233415205962956,"gater":null},{"from":0,"to":22,"weight":0.05248626517131924,"gater":null},{"from":0,"to":23,"weight":0.009967996599152679,"gater":null},{"from":1,"to":20,"weight":0.04769999757409096,"gater":null},{"from":1,"to":21,"weight":-0.05723457895219326,"gater":null},{"from":1,"to":22,"weight":-0.019354639202356333,"gater":null},{"from":1,"to":23,"weight":0.09965134351514279,"gater":null},{"from":2,"to":20,"weight":-0.720956416944235,"gater":null},{"from":2,"to":21,"weight":0.8957082328669441,"gater":null},{"from":2,"to":22,"weight":-2.088050572554004,"gater":null},{"from":2,"to":23,"weight":5.221890730649102,"gater":null},{"from":3,"to":20,"weight":-1.4817366438324342,"gater":null},{"from":3,"to":21,"weight":0.524725562950378,"gater":null},{"from":3,"to":22,"weight":0.5971388284148458,"gater":null},{"from":3,"to":23,"weight":-1.4532416448685888,"gater":null},{"from":4,"to":20,"weight":-0.40261428830834245,"gater":null},{"from":4,"to":21,"weight":1.131139963713042,"gater":null},{"from":4,"to":22,"weight":-3.055116347357037,"gater":null},{"from":4,"to":23,"weight":-12.025260085320552,"gater":null},{"from":5,"to":20,"weight":-0.019729558099061253,"gater":null},{"from":5,"to":21,"weight":0.02242941088043153,"gater":null},{"from":5,"to":22,"weight":0.08753198361955583,"gater":null},{"from":5,"to":23,"weight":-0.09108884800225497,"gater":null},{"from":6,"to":20,"weight":0.019319705478847024,"gater":null},{"from":6,"to":21,"weight":-0.0007346553727984456,"gater":null},{"from":6,"to":22,"weight":0.07223751093260944,"gater":null},{"from":6,"to":23,"weight":-0.07370518525131048,"gater":null},{"from":7,"to":20,"weight":-5.737510240005006,"gater":null},{"from":7,"to":21,"weight":7.079905700178278,"gater":null},{"from":7,"to":22,"weight":-5.630326571877711,"gater":null},{"from":7,"to":23,"weight":-0.5435721870437008,"gater":null},{"from":8,"to":20,"weight":-5.1901634489044595,"gater":null},{"from":8,"to":21,"weight":6.9029882376393505,"gater":null},{"from":8,"to":22,"weight":-6.932322435891785,"gater":null},{"from":8,"to":23,"weight":-0.8255221521284202,"gater":null},{"from":9,"to":20,"weight":-0.0899650076404214,"gater":null},{"from":9,"to":21,"weight":0.02840291811153292,"gater":null},{"from":9,"to":22,"weight":0.0036214811261743307,"gater":null},{"from":9,"to":23,"weight":-0.007167498208582396,"gater":null},{"from":10,"to":20,"weight":2.4013662995735934,"gater":null},{"from":10,"to":21,"weight":-2.4772055945903286,"gater":null},{"from":10,"to":22,"weight":-4.089746908360419,"gater":null},{"from":10,"to":23,"weight":-5.859629838506329,"gater":null},{"from":11,"to":20,"weight":1.8673726356672442,"gater":null},{"from":11,"to":21,"weight":-2.7151643305697544,"gater":null},{"from":11,"to":22,"weight":3.8770057508552824,"gater":null},{"from":11,"to":23,"weight":-4.414810783421297,"gater":null},{"from":12,"to":20,"weight":1.3695747257768018,"gater":null},{"from":12,"to":21,"weight":-2.0105628095210744,"gater":null},{"from":12,"to":22,"weight":3.2571819780165323,"gater":null},{"from":12,"to":23,"weight":-4.4084864837425535,"gater":null},{"from":13,"to":20,"weight":0.7909068164569615,"gater":null},{"from":13,"to":21,"weight":-2.319644553037326,"gater":null},{"from":13,"to":22,"weight":3.578818120692799,"gater":null},{"from":13,"to":23,"weight":11.907307443226975,"gater":null},{"from":14,"to":20,"weight":1.7986012107574647,"gater":null},{"from":14,"to":21,"weight":-2.004841677719702,"gater":null},{"from":14,"to":22,"weight":1.4319662448040942,"gater":null},{"from":14,"to":23,"weight":-4.4399225544194065,"gater":null},{"from":15,"to":20,"weight":0.06417353875003756,"gater":null},{"from":15,"to":21,"weight":-0.0718822014052421,"gater":null},{"from":15,"to":22,"weight":0.07384759625419976,"gater":null},{"from":15,"to":23,"weight":-0.04103341088630259,"gater":null},{"from":16,"to":20,"weight":-0.09402785114943982,"gater":null},{"from":16,"to":21,"weight":-0.058408388728275897,"gater":null},{"from":16,"to":22,"weight":-0.04227801649831236,"gater":null},{"from":16,"to":23,"weight":0.020121406950056556,"gater":null},{"from":17,"to":20,"weight":-6.92283077280942,"gater":null},{"from":17,"to":21,"weight":3.4861725549286566,"gater":null},{"from":17,"to":22,"weight":5.385777615409109,"gater":null},{"from":17,"to":23,"weight":-12.192595249359186,"gater":null},{"from":18,"to":20,"weight":-4.393220076597632,"gater":null},{"from":18,"to":21,"weight":-1.1691397499482958,"gater":null},{"from":18,"to":22,"weight":9.78230692495873,"gater":null},{"from":18,"to":23,"weight":-18.996778901066392,"gater":null},{"from":19,"to":20,"weight":12.081994203092009,"gater":null},{"from":19,"to":21,"weight":-2.4922140503569388,"gater":null},{"from":19,"to":22,"weight":-15.786449323979785,"gater":null},{"from":19,"to":23,"weight":-13.65517533633557,"gater":null}]});
+
+var result = myNetwork.activate(parameters);
+var sum = result[0] + result[1] + result[2] + result[3];
+
+for (var i in result) {
+	result[i] = result[i] || 0; //convert NaN results to 0
+	result[i] = Math.round(result[i]/sum * 100);
+}
+
+// Export the network to a JSON which you can save as plain text
+//var exported = input.toJSON();
+
+console.log("Input: " + parameters);
+//console.log("Expected output: " + trainingData[3]["output"]);
+console.log("Sum of outputs: " + sum)
+//output answers, rounded up to 100%
+console.log("Tier 1: " + result[0] + "%");
+console.log("Tier 2: " + result[1] + "%");
+console.log("Tier 3: " + result[2] + "%");
+console.log("Tier 4: " + result[3] + "%");
+
+var result = result;
+console.log(result);
+
+var pie = document.getElementById("clusterPie").getContext('2d');
+
+var clusterPie = new Chart(pie, {
+      type: 'pie',
+      data: {
+          datasets: [{
+              data: 
+                  result,
+              backgroundColor: [
+                  window.chartColors.green,
+                  window.chartColors.yellow,
+                  window.chartColors.orange,
+                  window.chartColors.red,
+              ],
+              label: 'Dataset 1'
+          }],
+          labels: [
+              "III: Reflective",
+              "II: Advanced",
+              "I: Beginner",
+              "<I: No problem solver"
+          ]
+      },
+      options: {
+          responsive: true,
+          legend: {
+              position: 'bottom',
+          },
+      }
+  });
+
+
+///-----------------------TEST with scrolable chart----///
+
+
+$(function() {
+
+  $(window).scroll(function() {
+    if ($('input[name="daterange"]').length) {
+      $('input[name="daterange"]').daterangepicker("close");
+    }
+  });
+});
+
+
+
+
+</script>

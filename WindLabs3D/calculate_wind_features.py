@@ -81,9 +81,7 @@ def Results(df):
     medianTimeOnTask = 0
     if len(wrongTimes) > 0:
         medianTimeOnTask = statistics.median(wrongTimes)
-    #if medianTimeOnTask > 100:
-    #    medianTimeOnTask = 9  # This is the average in the current dataset
-        
+      
     #if overRatio + correctRatio + underRatio > 0.99:
     #values may not equal 100% exactly, so normalise them
     try: 

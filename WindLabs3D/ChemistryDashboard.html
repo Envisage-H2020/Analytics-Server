@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+<!--<script src="../../dist/Chart.bundle.js"></script>-->
+<script src="../dashboardtest/utils.js"></script>
+<!--<script src="../dashboardtest/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../dashboardtest/bootstrap/dist/css/bootstrap.css"></script>-->
+<!--<script src="../dashboardtest/TimeToTaskBar.js"></script>-->
+
+<link rel="stylesheet" href="../dashboardtest/font-awesome/css/font-awesome.min.css">
+
+
+<!--<script src="../dashboardtest/node_modules/chart.js/dist/doc/Chart.min.js"></script>-->
+
+  <head>
+    <title>Chemistry Lab: Bonding Dashboard</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  </head>
+  <body>
+  <div class='container-fluid'>
+    <h1 class="text-center text-info" >Chemistry Lab: Bonding</h1>
+    <!--Time selector-->
+
+
+    <div class='row'>
+      <!--ACTIVE STUDENTS-->
+      <div class='col-md-3'>
+        <div class='card mb-3'>
+        <h6 class="card-header bg-info text-white">Students</h6>
+        <div class='card-body'>
+          <!--<div class="card-body text-center text-info">
+            <h1 class="display-1">14</h1>
+            Number of students active in the lab. <!-- in {time periode}-->
+          <!--</div>-->
+          <div class="card-body text-center text-info">
+            <h1 class="display-3">NO_STUDENTS_TO_SHOW</h1>
+            out of <strong>TOTAL_STUDENTS</strong>
+            Students
+          </div>
+        </div>
+      </div>
+
+      <!--cluster pie-->
+        <div class='card mb-3'>
+        <h6 class="card-header bg-info text-white">Archetypal Clusters</h6>
+
+        <div class='card-body'>
+          <p >
+            <small>
+              The 4 archetypes of in the class.
+            </small>
+          </p>
+          <canvas id="clusterPie" height="1" width="1" />
+        </div>
+      </div>
+
+      </div>
+      <!-- Task completion: Write Formula -->
+      
+      <div class='col-md-5'>
+        <div class='card mb-3'>
+          <h6 class="card-header text-white bg-info">Task completion: Write Formula</h6>
+          <div class='card-body'>
+            <i class="fa fa-check text-success"></i><small> Task complete</small>
+            <i class="fa fa-times text-danger"></i><small> Attempted but not completed</small>
+          </div>
+          <table class="table table-responsive table-bordered table-hover text-center">
+          <tr>
+            <th></th>
+            <th>HCL</th>
+            <th>H2O</th>
+            <th>NaF</th>
+            <th>NaCl</th>
+            <th>KBr</th>
+            <th>CH4</th>
+            <th>CaCl2</th>
+            <th>CF4</th>
+          </tr>
+          <tr>
+            <td>Peter</td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+          </tr>
+          <tr>
+            <td>Maria</td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td></td>
+            <td><i class="fa fa-times text-danger"></i></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Lea</td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-times text-danger"></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Giannis</td>
+            <td><i class="fa fa-times text-danger"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-times text-danger"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-times text-danger"></i></td>
+          </tr>
+          <tr>
+            <td>Mathias</td>
+            <td></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-times text-danger"></i></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+          <td>Else</td>
+            <td></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-times text-danger"></i></td>
+            <td></td>
+            <td></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td></td>
+          </tr>
+          <tr>
+          <td>Anna</td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td></td>
+            <td><i class="fa fa-times text-danger"></i></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Spiros</td>
+            <td></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td></td>
+            <td><i class="fa fa-times text-danger"></i></td>
+            <td><i class="fa fa-times text-danger"></i></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+          <td>Carl</td>
+          <td></td>
+          <td><i class="fa fa-check text-success"></i></td>
+          <td><i class="fa fa-times text-danger"></i></td>
+          <td><i class="fa fa-times text-danger"></i></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          </tr>
+          <tr>
+          <td>Bo</td>
+          <td></td>
+          <td><i class="fa fa-check text-success"></i></td>
+          <td></td>
+          <td><i class="fa fa-times text-danger"></i></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          </tr>
+        </table>
+        </div>
+
+</div>
+
+      <!-- Task completion: Chose Bond -->
+      <div class='col-md-4'>
+        <div class='card mb-3'>
+          <h6 class="card-header text-white bg-info">Task completion: Chose bond</h6>
+          <div class='card-body'>
+            <i class="fa fa-check text-success"></i><small> Correct answer</small>
+            <i class="fa fa-times text-danger"></i><small> Wrong answer</small>
+          </div>
+          <table class="table  table-responsive table-bordered table-hover text-center">
+          <tr>
+            <th></th>
+            <th>HCL</th>
+            <th>H2O</th>
+            <th>NaF</th>
+            <th>NaCl</th>
+            <th>KBr</th>
+            <th>CH4</th>
+            <th>CaCl2</th>
+            <th>CF4</th>
+          </tr>
+          <tr>
+            <td>Peter</td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-times text-danger"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-times text-danger"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+          </tr>
+          <tr>
+            <td>Maria</td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-times text-danger"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Lea</td>
+            <td><i class="fa fa-times text-danger"></i></td>
+            <td><i class="fa fa-times text-danger"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td></td>
+            <td><i class="fa fa-times text-danger"></i></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Giannis</td>
+            <td></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-times text-danger"></i></td>
+            <td></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Mathias</td>
+            <td></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+          <td>Else</td>
+          <td></td>
+          <td><i class="fa fa-check text-success"></i></td>
+          <td><i class="fa fa-times text-danger"></i></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><i class="fa fa-times text-danger"></i></td>
+          <td></td>
+          </tr>
+          <tr>
+          <td>Anna</td>
+            <td><i class="fa fa-times text-danger"></i></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+          <td>Spiros</td>
+            <td></td>
+            <td><i class="fa fa-check text-success"></i></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+          <td>Carl</td>
+            <td></td>
+            <td><i class="fa fa-times text-danger"></i></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+          <td>Bo</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+        <div class="card-deck col-md-12">
+
+        <!----Attemps at writing formula-->
+            <!--<div class='col-md-6'>
+              <div class='card mb-3'>-->
+              <div class="card">
+                <h6 class="card-header text-white bg-info">Time on task: Write Formula HCL</h6>
+                <div class='card-body'>
+                  <canvas id='AttempsWriteFormulaHCl' height="1" width="1"/ >
+                    <!--<canvas id='AttempsWriteFormula' height="1" width="3"/ >-->
+                </div>
+              </div>
+            <!--</div>-->
+            <!----Attemps at writing formula-->
+                <!--<div class='col-md-6'>
+                  <div class='card mb-3'>-->
+                  <div class="card">
+                    <h6 class="card-header text-white bg-info">Time on task: Write Formula H2O</h6>
+                    <div class='card-body'>
+                      <canvas id='AttempsWriteFormulaH2O' height="1" width="1"/ >
+                        <!--<canvas id='AttempsWriteFormulaH2O' height="1" width="3"/ >-->
+                    </div>
+                  </div>
+                <!--</div>-->
+                <div class="card">
+                  <h6 class="card-header text-white bg-info">Time on task: Write Formula NaF</h6>
+                  <div class='card-body'>
+                      <canvas id='AttempsWriteFormulaNaF' height="1" width="1"/ >
+                  </div>
+                </div>
+        </div>
+    </div>
+
+
+
+<script>
+var pie = document.getElementById("clusterPie").getContext('2d');
+var clusterPie = new Chart(pie, {
+      type: 'pie',
+      data: {
+          datasets: [{
+              data: [
+                  22,
+                  11,
+                  43,
+                  21,
+              ],
+              backgroundColor: [
+                  window.chartColors.green,
+                  window.chartColors.yellow,
+                  window.chartColors.orange,
+                  window.chartColors.red,
+              ],
+              label: 'Dataset 1'
+          }],
+          labels: [
+              "III: Reflective",
+              "II: Advanced",
+              "I: Beginner",
+              "<I: No problem solver"
+          ]
+      },
+      options: {
+          responsive: true,
+          legend: {
+              position: 'bottom',
+          },
+      }
+  });
+
+
+var hcl = document.getElementById("AttempsWriteFormulaHCl").getContext('2d');
+var myChart = new Chart(hcl, {
+  type: 'bar',
+    data: {
+        labels: ["Peter","Maria","Lea","Giannis","Mathias", 'Else', 'Anna', 'Spiros', 'Carl', 'Bo'],
+        datasets: [
+          {
+              type: 'line',
+              fill: false,
+              pointRadius: 0,
+              backgroundColor: window.chartColors.green,
+              borderColor: window.chartColors.green,
+              label: 'Class Median',
+              data: [45 , 45, 45, 45, 45,45, 45, 45, 45, 45]
+          },{
+            backgroundColor: window.chartColors.grey,
+            borderColor: window.chartColors.grey,
+            label: 'Time on Task',
+            data: [90, 120, 200, 600, 0,0, 420, 0, 0, 0]
+        }
+        ]
+    },
+    options: {
+      legend: {
+          position: 'bottom',
+      },
+        scales: {
+            yAxes: [{
+              scaleLabel: {
+                                display: true,
+                                labelString: 'Seconds'
+                            },
+                ticks: {
+                    beginAtZero:true
+                }
+            }],
+            xAxes: [{
+              scaleLabel: {
+                                display: false,
+                                labelString: 'Students'
+                            },
+                ticks: {
+                }
+            }]
+        }
+
+
+    }
+});
+
+var h2o = document.getElementById("AttempsWriteFormulaH2O").getContext('2d');
+var myChart = new Chart(h2o, {
+  type: 'bar',
+    data: {
+        labels: ["Peter","Maria","Lea","Giannis","Mathias", 'Else', 'Anna', 'Spiros', 'Carl', 'Bo'],
+        datasets: [
+          {
+              type: 'line',
+              fill: false,
+              pointRadius: 0,
+              backgroundColor: window.chartColors.green,
+              borderColor: window.chartColors.green,
+              label: 'Class Median',
+              data: [260, 260, 260, 260, 260,260, 260, 260, 260, 260]
+          },{
+            backgroundColor: window.chartColors.grey,
+            borderColor: window.chartColors.grey,
+            label: 'Time on Task',
+            data: [60, 90, 120, 105, 280,240, 300, 530, 630, 930]
+        }
+        ]
+    },
+    options: {
+      legend: {
+          position: 'bottom',
+      },
+        scales: {
+            yAxes: [{
+              scaleLabel: {
+                                display: true,
+                                labelString: 'Seconds'
+                            },
+                ticks: {
+                    beginAtZero:true
+                }
+            }],
+            xAxes: [{
+              scaleLabel: {
+                                display: false,
+                                labelString: 'Students'
+                            },
+                ticks: {
+                }
+            }]
+        }
+
+
+    }
+});
+
+var naf = document.getElementById("AttempsWriteFormulaNaF").getContext('2d');
+var myChart = new Chart(naf, {
+  type: 'bar',
+    data: {
+        labels: ["Peter","Maria","Lea","Giannis","Mathias", 'Else', 'Anna', 'Spiros', 'Carl', 'Bo'],
+        datasets: [
+          {
+              type: 'line',
+              fill: false,
+              pointRadius: 0,
+              backgroundColor: window.chartColors.green,
+              borderColor: window.chartColors.green,
+              label: 'Class Median',
+              data: [23.5 , 23.5, 23.5, 23.5, 23.5,23.5, 23.5, 23.5, 23.5, 23.5]
+          },{
+            backgroundColor: window.chartColors.grey,
+            borderColor: window.chartColors.grey,
+            label: 'Time on Task',
+            data: [60, 90, 0, 240, 2,180, 0, 0, 45, 0]
+        }
+        ]
+    },
+    options: {
+      legend: {
+          position: 'bottom',
+      },
+        scales: {
+            yAxes: [{
+              scaleLabel: {
+                                display: true,
+                                labelString: 'Seconds'
+                            },
+                ticks: {
+                    beginAtZero:true
+                }
+            }],
+            xAxes: [{
+              scaleLabel: {
+                                display: false,
+                                labelString: 'Students'
+                            },
+                ticks: {
+                }
+            }]
+        }
+
+
+    }
+});
+
+</script>

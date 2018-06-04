@@ -28,17 +28,21 @@ bonding_master_key = 'REDACTED'
 # Wind
 goedle_app_key = 'REDACTED'
 goedle_master_key = 'REDACTED'
+
+headers = {'X-goedle-app-key': goedle_app_key,
+           'X-goedle-master-key': goedle_master_key}
+
 GetLabData(wind_app_key,
            wind_master_key,
            'WindLab.json', 'wind')
            
-#GetLabData(bonding_app_key,bonding_master_key,'BondingLab.json', 'bonding')
+GetLabData(bonding_app_key,bonding_master_key,'BondingLab.json', 'bonding')
 
-#RefreshDataInMongoDB('BondingLab.json', 'bonding')
+RefreshDataInMongoDB('BondingLab.json', 'bonding')
 
 RefreshDataInMongoDB('WindLab.json', 'wind')
 
 CalculateWindFeatures()
-#CalculateBondingFeatures()
+CalculateBondingFeatures()
 WriteToCsv()
 # GenerateHTML()
